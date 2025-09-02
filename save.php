@@ -12,23 +12,11 @@ if (count($errors) > 0) {
 }
 
 function save($data) {
-  $file = OutputFile;
-  // If file exists, load existing data
-  if (file_exists($file)) {
-      $json = file_get_contents($file);
-      $arr = json_decode($json, true);
-      if (!is_array($arr)) {
-          $arr = [];
-      }
-  } else {
-      $arr = [];
-  }
+  $email = preg_replace( '/[^a-z0-9@.\-]+/', '-', strtolower($data['email']));
+  $filename = 'form-data-' . $data['timestamp'] . '-' . $email . '.json';
+  $file = OutputDir . $filename;
 
-  // Add new entry
-  $arr[] = $data;
-
-  // Save back to file
-  file_put_contents($file, json_encode($arr, JSON_PRETTY_PRINT));
+  file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT));
 }
 
 $data = [];
