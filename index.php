@@ -37,6 +37,9 @@ function save($data) {
       <?php if ($field['required']): ?> (pakollinen)<?php endif; ?>
     </label>
     <?php require('./utils/field.php'); ?>
+    <?php if (isset($errors[$field['id']])): ?>
+    <div class="error"><?= $errors[$field['id']]; ?></div>
+    <?php endif; ?>
   </div>
   <?php endif; ?>
 <?php endforeach; ?>

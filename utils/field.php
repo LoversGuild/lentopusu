@@ -1,4 +1,13 @@
 <?php switch($field['type']) {
+  case 'riddle':
+?>
+<input
+  type="text"
+  name="<?= $field['id'] ?>"
+  <?php if ($field['required']): ?>required<?php endif ?>
+  value="<?= htmlspecialchars($_POST[$field['id']], ENT_QUOTES, 'UTF-8') ?>" />
+<?php
+  break;
   case 'text':
   case 'email':
 ?>

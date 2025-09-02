@@ -87,6 +87,14 @@ $fields = [
     "required" => true,
   ],
   [
+    "id" => "codeword",
+    "name" => "Kirjoita tähän koodisana (porkkana)",
+    "type" => "riddle",
+    "required" => true,
+    "answer" => "porkkana",
+    "errormessage" => "Porkkana! Ei selleri!",
+  ],
+  [
     "id" => "consenttosave",
     "name" => "Suostutko siihen että henkilötietosi tallennetaan rakastajien killan osallistujarekisteriin",
     "checkboxlabel" => "Kyllä",

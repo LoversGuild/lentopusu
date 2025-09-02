@@ -1,12 +1,11 @@
 <?php
 require_once('config.php');
+require_once('./utils/validate.php');
 
-foreach ($fields as $field) {
-  if (!isset($field['id'])) continue;
-  $value = $_POST[$field['id']];
-  if ($field['required'] && trim($value) == '') {
-    require('index.php');
-    die();
-  }
+$errors = validate($fields);
+
+if (count($errors) > 0) {
+  require('index.php');
+  die();
 }
 ?>
