@@ -1,4 +1,7 @@
-<?php switch($field['type']) {
+<?php
+require_once('./utils/translate.php');
+
+switch($field['type']) {
   case 'riddle':
 ?>
 <input
@@ -43,15 +46,17 @@
   case 'radio':
 ?>
 <div class="radio">
-  <?php foreach($field['choices'] as $choice): ?>
+  <?php foreach($field['choices'] as $choice):
+  $translatedChoice = translate($choice);
+  ?>
   <label>
     <input
       type="radio"
       name="<?= $field['id'] ?>"
       <?php if ($field['required']): ?>required<?php endif ?>
-      <?php if ($_POST[$field['id']] == $choice): ?>checked<?php endif ?>
-      value="<?= $choice ?>" />
-     <?= $choice ?>
+      <?php if ($_POST[$field['id']] == $translatedChoice): ?>checked<?php endif ?>
+      value="<?= $translatedChoice ?>" />
+     <?= $translatedChoice ?>
   </label>
   <?php endforeach; ?>
 </div>

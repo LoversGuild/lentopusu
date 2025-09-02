@@ -2,6 +2,7 @@
 const OutputFile = "form_data.json";
 const SecretPassword = "porkkana";
 
+$formTitle = "Ilmoittaudu";
 $intro = <<<END
 <p>Lorem ipsum. Tervetuloa ja niin edelleen. Täytä kentät</p>
 END;

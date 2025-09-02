@@ -2,6 +2,8 @@
 require_once('config.php');
 require_once('./utils/template.php');
 require_once('./utils/validate.php');
+require_once('./utils/translate.php');
+
 $errors = validate($fields);
 
 if (count($errors) > 0) {
@@ -37,7 +39,10 @@ foreach ($fields as $field) {
 }
 save($data);
 
+const Title = ['fi' => 'Tiedot tallennettu!'];
+const ThankYou = ['fi' => 'Kiitos ilmoittautumisesta!'];
+
 ?>
-<h1>Tiedot tallennettu!</h1>
-<p>Kiitos ilmoittautumisesta!</p>
-<?php render_template('Ilmoittautuminen');
+<h1><?= translate(Title) ?></h1>
+<p><?= translate(ThankYou) ?></p>
+<?php render_template(translate($formTitle));

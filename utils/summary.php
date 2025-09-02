@@ -1,9 +1,14 @@
 <?php
 require_once('config.php');
 require_once('./utils/template.php');
+require_once('./utils/translate.php');
+
+const EditAnswers = ['fi' => 'Muokkaa vastauksiasi', "en" => "Edit response"];
+const Submit = ['fi' => 'Ilmoittaudu', "en" => "Sign up"];
+const SummaryTitle= ['fi' => 'Olet lähettämässä seuraavat tiedot', 'en' => 'You are sending the following information'];
 
 ?>
-<h1>Olet lähettämässä seuraavat tiedot</h1>
+<h1><?= translate(SummaryTitle) ?></h1>
 <form method="POST">
 <?php foreach($fields as $field):?>
   <?php if ($field['subtitle']): ?>
@@ -23,8 +28,8 @@ require_once('./utils/template.php');
   <?php endif; ?>
 <?php endforeach; ?>
   <div class="buttons">
-    <button type="submit" formaction="index.php?edit">Muokkaa vastauksiasi</button>
-    <button type="submit" formaction="save.php">Lähetä ilmoittautuminen</button>
+    <button type="submit" formaction="index.php?edit&lang=<?= lang() ?>"><?= translate(EditAnswers); ?></button>
+    <button type="submit" formaction="save.php?lang=<?= lang() ?>">Lähetä ilmoittautuminen</button>
   </div>
 </form>
-<?php render_template('Ilmoittautuminen');
+<?php render_template(translate($formTitle));

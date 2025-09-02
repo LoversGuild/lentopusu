@@ -2,6 +2,8 @@
 require_once('config.php');
 require_once('./utils/template.php');
 require_once('./utils/validate.php');
+require_once('./utils/translate.php');
+
 
 $errors = validate($fields);
 if (count($errors) == 0 && !isset($_GET['edit'])) {
@@ -13,34 +15,37 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
   $errors = [];
 }
 
+const Required = ['fi' => 'pakollinen', 'en' => 'required'];
+const Submit = ['fi' => 'Lähetä', 'en' => 'Submit'];
+
 ?>
-<h1>Ilmoittaudu</h1>
-<?= $intro ?>
-<form method="POST" action="index.php">
+<h1><?= translate($formTitle); ?></h1>
+<?= translate($intro); ?>
+<form method="POST" action="index.php?lang=<?= lang() ?>">
 <?php foreach($fields as $field): ?>
   <?php if ($field['subtitle']): ?>
-  <h2><?= $field['subtitle'] ?></h2>
+  <h2><?= translate($field['subtitle']) ?></h2>
   <?php endif; ?>
   <?php if (isset($field['id'])): ?>
   <div class="<?= $field['class'] ?>">
     <label labelFor="<?= $field['id']; ?>">
-      <?= $field['name']; ?>
-      <?php if ($field['required']): ?> (pakollinen)<?php endif; ?>
+      <?= translate($field['name']); ?>
+      <?php if ($field['required']): ?> (<?= translate(Required); ?>)<?php endif; ?>
     </label>
     <?php require('./utils/field.php'); ?>
     <?php if (isset($field['info'])): ?>
-    <div class="info"><?= $field['info']; ?></div>
+    <div class="info"><?= translate($field['info']); ?></div>
     <?php endif; ?>
     <?php if (isset($errors[$field['id']])): ?>
-    <div class="error"><?= $errors[$field['id']]; ?></div>
+    <div class="error"><?= translate($errors[$field['id']]); ?></div>
     <?php endif; ?>
   </div>
   <?php elseif (isset($field['info'])): ?>
-    <div class="info"><?= $field['info']; ?></div>
+    <div class="info"><?= translate($field['info']); ?></div>
   <?php endif; ?>
 <?php endforeach; ?>
   <div class="buttons">
-    <button type="submit">Submit</button>
+    <button type="submit"><?= translate(Submit) ?></button>
   </div>
 </form>
-<?php render_template('Ilmoittautuminen');
+<?php render_template(translate($formTitle));

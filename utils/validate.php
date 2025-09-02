@@ -1,4 +1,11 @@
 <?php
+require_once('./utils/translate.php');
+
+const FieldIsRequired = ["fi" => "Kenttä on pakollinen", "en" => "The field is required"];
+const DefaultRiddleError = [
+  "fi" => "Väärä vastaus. Luethan ilmoittautumisohjeet tarkemmin!",
+  "en" => "Wrong answer. Please read the instructions more carefully!"
+];
 
 function validate($fields) {
   $errors = [];
@@ -10,10 +17,10 @@ function validate($fields) {
     
 
     if ($field['required'] && trim($value) == '') {
-      $errors[$id] = 'Kenttä on pakollinen';
+      $errors[$id] = translate(FieldIsRequired);
     }
     if ($field['type'] == 'riddle' && strcasecmp(trim($value), $field['answer']) != 0) {
-      $errors[$id] = $field['errormessage'] ?? 'Väärä vastaus. Luethan ilmoittautumisohjeet tarkemmin!';
+      $errors[$id] = translate($field['errormessage'] ?? DefaultRiddleError);
     }
   }
   return $errors;
