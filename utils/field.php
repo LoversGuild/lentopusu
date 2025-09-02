@@ -39,5 +39,22 @@
 </label>
 <?php
   break;
+  case 'radio':
+?>
+<div class="radio">
+  <?php foreach($field['choices'] as $choice): ?>
+  <label>
+    <input
+      type="radio"
+      name="<?= $field['id'] ?>"
+      <?php if ($field['required']): ?>required<?php endif ?>
+      <?php if ($_POST[$field['id']] == $choice): ?>checked<?php endif ?>
+      value="<?= $choice ?>" />
+     <?= $choice ?>
+  </label>
+  <?php endforeach; ?>
+</div>
+<?php
+  break;
 }
 ?>

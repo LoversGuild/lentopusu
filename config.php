@@ -37,8 +37,9 @@ $fields = [
   ],
   [
     "id" => "languagepreference",
-    "name" => "Mitä kieltä suosit (suomi, ruotsi, englanti)?",
-    "type" => "text",
+    "name" => "Mitä kieltä suosit?",
+    "type" => "radio",
+    "choices" => ["suomi", "ruotsi", "englanti"],
     "required" => true,
   ],
   [
@@ -50,8 +51,9 @@ $fields = [
   [ "subtitle" => "Tiedot sukuelimistä" ],
   [
     "id" => "sexorgans",
-    "name" => "Millaiset sukuelimet sinulla on? Naaras, uros, vai muu?",
-    "type" => "text",
+    "name" => "Millaiset sukuelimet sinulla on?",
+    "type" => "radio",
+    "choices" => ["naaras", "uros", "muu"],
     "required" => true,
   ],
   [
