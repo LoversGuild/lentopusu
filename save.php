@@ -39,8 +39,8 @@ foreach ($fields as $field) {
 }
 save($data);
 
-const Title = ['fi' => 'Tiedot tallennettu!'];
-const ThankYou = ['fi' => 'Kiitos ilmoittautumisesta!'];
+const Title = ['fi' => 'Tiedot tallennettu!', 'en' => 'Your data has been stored!'];
+const ThankYou = ['fi' => 'Kiitos ilmoittautumisesta!', 'en' => 'Thank you for signing up!'];
 
 ?>
 <h1><?= translate(Title) ?></h1>
