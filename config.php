@@ -1,5 +1,5 @@
 <?php
-const OutputFile = "data/form_data.json";
+const OutputDir = "data/";
 const SecretPassword = "porkkana";
 
 $formTitle = ['fi' => "Ilmoittaudu", 'en' => 'Sign up'];
