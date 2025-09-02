@@ -6,11 +6,18 @@ $intro = <<<END
 <p>Lorem ipsum. Tervetuloa ja niin edelleen. Täytä kentät</p>
 END;
 
+$interest_choices = [
+  "Kyllä kiitos!",
+  "Riippuu ihmisestä",
+  "Ehkä",
+  "Ei kiitos",
+];
+
 $fields = [
   [ "subtitle" => "Henkilötiedot" ],
   [
     "id" => "givenname",
-    "name" => "Etunimi",
+    "name" => "Kutsumanimesi",
     "type" => "text",
     "required" => true,
     "class" => "half-width",
@@ -23,16 +30,21 @@ $fields = [
     "class" => "half-width",
   ],
   [
-    "id" => "email",
-    "name" => "Sähköposti",
-    "type" => "email",
-    "required" => true,
-    "class" => "half-width",
+    "info" => "Pyydämme nimeäsi avoimuuden hengessä. Me järjestämme juhlat avoimesti omilla nimillämme ja uskomme tämän luottamuksen olevan tärkeä osa orgioita."
   ],
   [
     "id" => "phone",
     "name" => "Puhelinnumero",
+    "info" => "Soitamme sinulle vain tiedottaaksemme äkillisistä muutoksista.",
     "type" => "text",
+    "required" => false,
+    "class" => "half-width",
+  ],
+  [
+    "id" => "birthyear",
+    "name" => "Syntymävuotesi",
+    "info" => "Käytämme tätä tietoa osallistujien ikäjakauman selvittämiseen.",
+    "type" => "number",
     "required" => false,
     "class" => "half-width",
   ],
@@ -49,36 +61,60 @@ $fields = [
     "type" => "textarea",
     "required" => false,
   ],
-  [ "subtitle" => "Tiedot sukuelimistä" ],
   [
     "id" => "sexorgans",
     "name" => "Millaiset sukuelimet sinulla on?",
+    "info" => "Yhdessä kiinnostustesi kanssa hyödynnämme tätä tietoa mahdollisimman tasapainoisen osallistujaryhmän kokoamisessa.",
     "type" => "radio",
     "choices" => ["naaras", "uros", "muu"],
     "required" => true,
   ],
+  [ "subtitle" => "Kiinnostukset" ],
+  [
+    "info" => "Jos rakastelukumppanien sukupuolielinten tyypillä on sinulle jotakin merkitystä, kerro siitä meille."
+  ],
   [
     "id" => "interest-in-females",
-    "name" => "Oletko kiinnostunut lempimään sellaisten ihmisten kanssa, joilla on naaraan sukuelimet?",
-    "type" => "text",
+    "name" => "Kuinka kiinnostunut olet lempimään sellaisten ihmisten kanssa, joilla on naaraan sukuelimet?",
+    "type" => "radio",
+    "choices" => $interest_choices,
     "required" => true,
   ],
   [
     "id" => "interest-in-males",
-    "name" => "Oletko kiinnostunut lempimään sellaisten ihmisten kanssa, joilla on uroksen sukuelimet?",
-    "type" => "text",
+    "name" => "Kuinka kiinnostunut olet lempimään sellaisten ihmisten kanssa, joilla on uroksen sukuelimet?",
+    "type" => "radio",
+    "choices" => $interest_choices,
     "required" => true,
+  ],
+  [
+    "info" => "Minkä ikäisistä olet kiinnostunut?"
+  ],
+  [
+    "id" => "min-age",
+    "name" => "Vähimmäisikä",
+    "type" => "number",
+    "required" => false,
+    "class" => "half-width",
+  ],
+  [
+    "id" => "max-age",
+    "name" => "Enimmäisikä",
+    "type" => "number",
+    "required" => false,
+    "class" => "half-width",
   ],
   [ "subtitle" => "Avecit ja epätoivotut henkilöt" ],
   [
     "id" => "avecs",
-    "name" => "Mahdollisten avecciesi nimet",
+    "name" => "Mahdollisten avecciesi nimet ja sähköpostiosoitteet",
     "type" => "textarea",
     "required" => false,
   ],
   [
     "id" => "nongratas",
-    "name" => "Keiden kanssa et haluaisi olla samoissa lempeissä orgioissa? (yksittäisten henkilöiden nimiä)",
+    "name" => "Niiden henkilöiden nimet, joiden kanssa et koe voivasi osallistua orgioihin ja joiden uskot voivan osallistua näihin juhliin",
+    "info" => "Kerromme sinulle onko joku heistä ilmoittautunut mukaan, mutta emme tietenkään kerro kuka tai ketkä. Voit sitten perua oman osallistumisesi, jos niin tahdot. Tämä on toinen syy nimienne kysymiselle.",
     "type" => "textarea",
     "required" => false,
   ],
@@ -88,6 +124,14 @@ $fields = [
     "name" => "Muut asiat, jotka haluaisit meidän tietävän",
     "type" => "textarea",
     "required" => false,
+  ],
+  [
+    "id" => "staysfornight",
+    "name" => "Oletko jäämässä yöksi?",
+    "type" => "radio",
+    "choices" => ["Kyllä!", "En", "En tiedä vielä"],
+    "info" => "Varaamme aamupalatarpeita sen mukaan, kuinka moni on syömässä.",
+    "required" => true,
   ],
   [
     "id" => "codeword",

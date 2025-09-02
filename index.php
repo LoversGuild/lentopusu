@@ -28,10 +28,15 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
       <?php if ($field['required']): ?> (pakollinen)<?php endif; ?>
     </label>
     <?php require('./utils/field.php'); ?>
+    <?php if (isset($field['info'])): ?>
+    <div class="info"><?= $field['info']; ?></div>
+    <?php endif; ?>
     <?php if (isset($errors[$field['id']])): ?>
     <div class="error"><?= $errors[$field['id']]; ?></div>
     <?php endif; ?>
   </div>
+  <?php elseif (isset($field['info'])): ?>
+    <div class="info"><?= $field['info']; ?></div>
   <?php endif; ?>
 <?php endforeach; ?>
   <div class="buttons">

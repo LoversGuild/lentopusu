@@ -1,6 +1,6 @@
 form {
   display: grid;
-  gap: 1.5em;
+  gap: 1em;
   @media screen and (min-width: 850px) {
     grid-template-columns: 1fr 1fr;
   }
@@ -23,6 +23,13 @@ form {
     margin-top: 6px;
     color: #a00;
     font-weight: bold;
+  }
+  label:not(:has(input)) {
+    font-weight: 600;
+  }
+
+  .info {
+    margin-top: 6px;
   }
 }
 
