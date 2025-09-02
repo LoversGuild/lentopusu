@@ -1,5 +1,6 @@
 <?php
 const OutputFile = "form_data.json";
+const SecretPassword = "porkkana";
 
 $intro = <<<END
 <p>Lorem ipsum. Tervetuloa ja niin edelleen. Täytä kentät</p>
@@ -90,11 +91,11 @@ $fields = [
   ],
   [
     "id" => "codeword",
-    "name" => "Kirjoita tähän koodisana (porkkana)",
+    "name" => "Kirjoita tähän koodisana ".SecretPassword,
     "type" => "riddle",
     "required" => true,
-    "answer" => "porkkana",
-    "errormessage" => "Porkkana! Ei selleri!",
+    "answer" => SecretPassword,
+    "errormessage" => SecretPassword . "! Ei selleri!",
   ],
   [
     "id" => "consenttosave",
