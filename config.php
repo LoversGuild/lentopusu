@@ -1,30 +1,39 @@
 <?php
 const OutputFile = "form_data.json";
 
+$intro = <<<END
+<p>Lorem ipsum. Tervetuloa ja niin edelleen. Täytä kentät</p>
+END;
+
 $fields = [
+  [ "subtitle" => "Henkilötiedot" ],
   [
     "id" => "givenname",
     "name" => "Etunimi",
     "type" => "text",
     "required" => true,
+    "class" => "half-width",
   ],
   [
     "id" => "surname",
     "name" => "Sukunimi",
-    "type" => "textarea",
+    "type" => "text",
     "required" => true,
+    "class" => "half-width",
   ],
   [
     "id" => "email",
     "name" => "Sähköposti",
     "type" => "email",
     "required" => true,
+    "class" => "half-width",
   ],
   [
     "id" => "phone",
     "name" => "Puhelinnumero",
     "type" => "text",
     "required" => false,
+    "class" => "half-width",
   ],
   [
     "id" => "languagepreference",
@@ -32,6 +41,13 @@ $fields = [
     "type" => "text",
     "required" => true,
   ],
+  [
+    "id" => "allegies",
+    "name" => "Terveydelle vaaralliset allergiat, joista järjestäjien on syytä tietää",
+    "type" => "textarea",
+    "required" => false,
+  ],
+  [ "subtitle" => "Tiedot sukuelimistä" ],
   [
     "id" => "sexorgans",
     "name" => "Millaiset sukuelimet sinulla on? Naaras, uros, vai muu?",
@@ -50,12 +66,7 @@ $fields = [
     "type" => "text",
     "required" => true,
   ],
-  [
-    "id" => "allegies",
-    "name" => "Terveydelle vaaralliset allergiat, joista järjestäjien on syytä tietää",
-    "type" => "textarea",
-    "required" => false,
-  ],
+  [ "subtitle" => "Avecit ja epätoivotut henkilöt" ],
   [
     "id" => "avecs",
     "name" => "Mahdollisten avecciesi nimet",
@@ -68,6 +79,7 @@ $fields = [
     "type" => "textarea",
     "required" => false,
   ],
+  [ "subtitle" => "Muuta" ],
   [
     "id" => "info",
     "name" => "Muut asiat, jotka haluaisit meidän tietävän",
@@ -77,6 +89,7 @@ $fields = [
   [
     "id" => "consenttosave",
     "name" => "Suostutko siihen että henkilötietosi tallennetaan rakastajien killan osallistujarekisteriin",
+    "checkboxlabel" => "Kyllä",
     "type" => "checkbox",
     "required" => true,
   ]

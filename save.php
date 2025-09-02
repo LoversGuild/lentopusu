@@ -1,5 +1,6 @@
 <?php
 require_once('config.php');
+require_once('./utils/template.php');
 
 function save($data) {
   $file = OutputFile;
@@ -22,18 +23,14 @@ function save($data) {
 }
 
 $data = [];
+$data['timestamp'] = gmdate("Y-m-d\TH:i:s\Z");
 foreach ($fields as $field) {
+  if (!isset($field['id'])) continue;
   $data[$field['id']] = $_POST[$field['id']];
 }
 save($data);
 
-?><!DOCTYPE html>
-<html>
-  <head>
-      <title>Ilmoittautuminen</title>
-  </head>
-  <body>
-      <h1>Tiedot tallennettu!</h1>
-      <p>Kiitos ilmoittautumisesta!</p>
-  </body>
-</html>
+?>
+<h1>Tiedot tallennettu!</h1>
+<p>Kiitos ilmoittautumisesta!</p>
+<?php render_template('Ilmoittautuminen');

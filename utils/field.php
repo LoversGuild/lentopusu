@@ -19,12 +19,15 @@
   break;
   case 'checkbox':
 ?>
-<input
-  type="checkbox"
-  name="<?= $field['id'] ?>"
-  <?php if ($field['required']): ?>required<?php endif ?>
-  <?php if ($_POST[$field['id']] == 'true'): ?>checked<?php endif ?>
-  value="true" />
+<label>
+  <input
+    type="checkbox"
+    name="<?= $field['id'] ?>"
+    <?php if ($field['required']): ?>required<?php endif ?>
+    <?php if ($_POST[$field['id']] == 'true'): ?>checked<?php endif ?>
+    value="true" />
+   <?= $field['checkboxlabel'] ?>
+</label>
 <?php
   break;
 }
