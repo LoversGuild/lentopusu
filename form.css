@@ -43,7 +43,7 @@ label {
 }
 
 input:not([type="checkbox"],[type="radio"]) {
-  width: min(300px, 80dvw);
+  width: min(300px, calc(100dvw - 120px));
 }
 
 textarea {
