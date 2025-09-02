@@ -39,7 +39,7 @@ switch($field['type']) {
     <?php if ($field['required']): ?>required<?php endif ?>
     <?php if ($_POST[$field['id']] == 'true'): ?>checked<?php endif ?>
     value="true" />
-   <?= $field['checkboxlabel'] ?>
+   <?= translate($field['checkboxlabel']) ?>
 </label>
 <?php
   break;
