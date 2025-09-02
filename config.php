@@ -39,6 +39,12 @@ $fields = [
     "info" => ['fi' => "Pyydämme nimeäsi avoimuuden hengessä. Me järjestämme juhlat avoimesti omilla nimillämme ja uskomme tämän luottamuksen olevan tärkeä osa orgioita.", 'en' => "Pyydämme nimeäsi avoimuuden hengessä. Me järjestämme juhlat avoimesti omilla nimillämme ja uskomme tämän luottamuksen olevan tärkeä osa orgioita."]
   ],
   [
+    "id" => "email",
+    "name" => ['fi' => "Sähköpostiosoitteesi", 'en' => "Email"],
+    "type" => "email",
+    "required" => false,
+  ],
+  [
     "id" => "phone",
     "name" => ['fi' => "Puhelinnumero", 'en' => "Puhelinnumero"],
     "info" => ['fi' => "Soitamme sinulle vain tiedottaaksemme äkillisistä muutoksista.", 'en' => "Soitamme sinulle vain tiedottaaksemme äkillisistä muutoksista."],

@@ -12,11 +12,11 @@ const SummaryTitle= ['fi' => 'Olet lähettämässä seuraavat tiedot', 'en' => '
 <form method="POST">
 <?php foreach($fields as $field):?>
   <?php if ($field['subtitle']): ?>
-  <h2><?= $field['subtitle'] ?></h2>
+  <h2><?= translate($field['subtitle']) ?></h2>
   <?php endif; ?>
   <?php if (isset($field['id'])): ?>
   <div class="<?= $field['class'] ?>">
-    <?= $field['name']; ?>:
+    <?= translate($field['name']); ?>:
     <div className="summary-value">
       <?php require('./utils/field_summary.php'); ?>
     </div>
