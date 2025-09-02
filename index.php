@@ -1,31 +1,22 @@
 <?php
 require_once('config.php');
 require_once('./utils/template.php');
+require_once('./utils/validate.php');
 
-function save($data) {
-  $file = OutputFile;
-  // If file exists, load existing data
-  if (file_exists($file)) {
-      $json = file_get_contents($file);
-      $arr = json_decode($json, true);
-      if (!is_array($arr)) {
-          $arr = [];
-      }
-  } else {
-      $arr = [];
-  }
-
-  // Add new entry
-  $arr[] = $data;
-
-  // Save back to file
-  file_put_contents($file, json_encode($arr, JSON_PRETTY_PRINT));
+$errors = validate($fields);
+if (count($errors) == 0 && !isset($_GET['edit'])) {
+  require('./utils/summary.php');
+  die();
+}
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+  // Do not show errors when nothing has been submitted
+  $errors = [];
 }
 
 ?>
 <h1>Ilmoittaudu</h1>
 <?= $intro ?>
-<form method="POST" action="summary.php">
+<form method="POST" action="index.php">
 <?php foreach($fields as $field): ?>
   <?php if ($field['subtitle']): ?>
   <h2><?= $field['subtitle'] ?></h2>

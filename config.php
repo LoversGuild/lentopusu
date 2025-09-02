@@ -84,7 +84,7 @@ $fields = [
     "id" => "info",
     "name" => "Muut asiat, jotka haluaisit meidän tietävän",
     "type" => "textarea",
-    "required" => true,
+    "required" => false,
   ],
   [
     "id" => "codeword",

@@ -1,6 +1,5 @@
 <?php
 require_once('config.php');
-require_once('validate.php');
 require_once('./utils/template.php');
 
 ?>
@@ -24,7 +23,7 @@ require_once('./utils/template.php');
   <?php endif; ?>
 <?php endforeach; ?>
   <div class="buttons">
-    <button type="submit" formaction="index.php">Muokkaa vastauksiasi</button>
+    <button type="submit" formaction="index.php?edit">Muokkaa vastauksiasi</button>
     <button type="submit" formaction="save.php">Lähetä ilmoittautuminen</button>
   </div>
 </form>
