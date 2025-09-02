@@ -38,6 +38,7 @@ foreach ($fields as $field) {
   $data[$field['id']] = $_POST[$field['id']];
 }
 save($data);
+require_once('./utils/email.php');
 
 const Title = ['fi' => 'Tiedot tallennettu!', 'en' => 'Your data has been stored!'];
 const ThankYou = ['fi' => 'Kiitos ilmoittautumisesta!', 'en' => 'Thank you for signing up!'];
