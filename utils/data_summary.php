@@ -6,7 +6,7 @@ require_once('./utils/translate.php');
 function renderFieldSummary($email) {
   global $fields;
   foreach($fields as $field):?>
-    <?php if ($field['subtitle']): ?>
+    <?php if (isset($field['subtitle'])): ?>
     <h2><?= translate($field['subtitle']) ?></h2>
     <?php endif; ?>
     <?php if (isset($field['id'])): ?>
