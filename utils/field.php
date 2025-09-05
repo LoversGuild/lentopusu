@@ -37,7 +37,7 @@ switch($field['type']) {
     type="checkbox"
     name="<?= $field['id'] ?>"
     <?php if ($field['required']): ?>required<?php endif ?>
-    <?php if ($_POST[$field['id']] == 'true'): ?>checked<?php endif ?>
+    <?php if ($_POST[$field['id']] ?? '' == 'true'): ?>checked<?php endif ?>
     value="true" />
    <?= translate($field['checkboxlabel']) ?>
 </label>
@@ -54,7 +54,7 @@ switch($field['type']) {
       type="radio"
       name="<?= $field['id'] ?>"
       <?php if ($field['required']): ?>required<?php endif ?>
-      <?php if ($_POST[$field['id']] == $translatedChoice): ?>checked<?php endif ?>
+      <?php if ($_POST[$field['id']] ?? '' == $translatedChoice): ?>checked<?php endif ?>
       value="<?= $translatedChoice ?>" />
      <?= $translatedChoice ?>
   </label>

@@ -13,7 +13,7 @@ function validate($fields) {
     if (!isset($field['id'])) continue;
     $id = $field['id'];
 
-    $value = $_POST[$id];
+    $value = $_POST[$id] ?? '';
     
 
     if ($field['required'] && trim($value) == '') {

@@ -29,11 +29,11 @@ const Submit = ['fi' => 'Lähetä', 'en' => 'Submit'];
 <?= translate($intro); ?>
 <form method="POST" action="index.php?lang=<?= lang() ?>">
 <?php foreach($fields as $field): ?>
-  <?php if ($field['subtitle']): ?>
+  <?php if (isset($field['subtitle'])): ?>
   <h2><?= translate($field['subtitle']) ?></h2>
   <?php endif; ?>
   <?php if (isset($field['id'])): ?>
-  <div class="<?= $field['class'] ?>">
+    <div <?php if (isset($field['class'])): ?>class="<?= $field['class'] ?>"><?php endif; ?>
     <label labelFor="<?= $field['id']; ?>">
       <?= translate($field['name']); ?>
       <?php if ($field['required']): ?> (<?= translate(Required); ?>)<?php endif; ?>
