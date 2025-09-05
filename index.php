@@ -33,7 +33,7 @@ const Submit = ['fi' => 'Lähetä', 'en' => 'Submit'];
   <h2><?= translate($field['subtitle']) ?></h2>
   <?php endif; ?>
   <?php if (isset($field['id'])): ?>
-    <div <?php if (isset($field['class'])): ?>class="<?= $field['class'] ?>"><?php endif; ?>
+    <div <?php if (isset($field['class'])): ?>class="<?= $field['class'] ?>"<?php endif; ?>>
     <label labelFor="<?= $field['id']; ?>">
       <?= translate($field['name']); ?>
       <?php if ($field['required']): ?> (<?= translate(Required); ?>)<?php endif; ?>
