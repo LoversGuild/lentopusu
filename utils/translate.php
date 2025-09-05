@@ -11,23 +11,26 @@ function translate($text) {
   return addTargetBlank($text[$lang] ?? '!missing translation!');
 }
 
-
 function addTargetBlank($html) {
-  $dom = new DOMDocument();
-  libxml_use_internal_errors(true); // suppress warnings for malformed HTML
-  $dom->loadHTML(
-    '<div>' . mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8') . '</div>',
-    LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD
-  );
+    // Wrap the input in a <html> as libxml cannot handle plain text. Also fix UTF-8 problems by defining charset.
+    $wrappedHtml = '<html><meta charset="utf-8" /><body>' . $html . '</body></html>';    
 
-  $links = $dom->getElementsByTagName('a');
-  foreach ($links as $link) {
-      if (!$link->hasAttribute('target')) {
-          $link->setAttribute('target', '_blank');
-      }
-  }
+    $dom = new DOMDocument();
+    
+    // Load the wrapped HTML
+    if (!@$dom->loadHTML($wrappedHtml, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD)) {
+        throw new RuntimeException('Malformed HTML encountered.');
+    }
 
-  $body = $dom->getElementsByTagName('div')->item(0);
+    $links = $dom->getElementsByTagName('a');
+    foreach ($links as $link) {
+        if (!$link->hasAttribute('target')) {
+            $link->setAttribute('target', '_blank');
+        }
+    }
+
+  // Remove the wrapping
+  $body = $dom->getElementsByTagName('body')->item(0);
   $newHtml = '';
   foreach ($body->childNodes as $child) {
       $newHtml .= $dom->saveHTML($child);
