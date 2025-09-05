@@ -198,8 +198,7 @@ $fields = [
     "type" => "textarea",
     "required" => false,
   ],
-  [ "subtitle" => [ "fi" => "Muut tiedot", "en" => "Miscellaneous information" ],
-  [
+  [ "subtitle" => [ "fi" => "Muut tiedot", "en" => "Miscellaneous information" ]],
   [
     "id" => "staysfornight",
     "name" => [
@@ -214,11 +213,12 @@ $fields = [
       [ "fi" => "Ei kiitos", "en" => "No thank you" ]
     ],
     "info" => [
-       'fi' => "Varaamme nukkumapaikkoja ja aamupalatarpeita sen mukaan, kuinka moni niitä tarvitsee.",
+      'fi' => "Varaamme nukkumapaikkoja ja aamupalatarpeita sen mukaan, kuinka moni niitä tarvitsee.",
       'en' => "We will reserve sleeping spots and breakfast supplies based on how many people need them."
     ],
     "required" => true,
   ],
+  [
     "id" => "info",
     "name" => [
       'fi' => "Muut asiat, jotka haluaisit meidän tietävän",
