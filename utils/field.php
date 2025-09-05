@@ -8,7 +8,7 @@ switch($field['type']) {
   type="text"
   name="<?= $field['id'] ?>"
   <?php if ($field['required']): ?>required<?php endif ?>
-  value="<?= htmlspecialchars($_POST[$field['id']], ENT_QUOTES, 'UTF-8') ?>" />
+  value="<?= htmlspecialchars($_POST[$field['id']] ?? '', ENT_QUOTES, 'UTF-8') ?>" />
 <?php
   break;
   case 'text':
@@ -27,7 +27,7 @@ switch($field['type']) {
 <textarea
   name="<?= $field['id'] ?>"
   <?php if ($field['required']): ?>required<?php endif ?>
- ><?= htmlspecialchars($_POST[$field['id']], ENT_QUOTES, 'UTF-8') ?></textarea>
+ ><?= htmlspecialchars($_POST[$field['id']] ?? '', ENT_QUOTES, 'UTF-8') ?></textarea>
 <?php
   break;
   case 'checkbox':
