@@ -10,7 +10,7 @@ function renderFieldSummary($email) {
     <h2><?= translate($field['subtitle']) ?></h2>
     <?php endif; ?>
     <?php if (isset($field['id'])): ?>
-    <div class="<?= $field['class'] ?>">
+    <div <?php if (isset($field['class'])): ?> class="<?= $field['class'] ?>"<?php endif; ?>>
       <?= translate($field['name']); ?>:
       <div className="summary-value">
         <?php require('./utils/field_summary.php'); ?>
