@@ -36,14 +36,14 @@ $interest_choices = [
 $fields = [
   [ "subtitle" => ['fi' => "Henkilötiedot", 'en' => "Identification information"] ],
   [
-    "id" => "givenname",
+    "id" => "first_name",
     "name" => ['fi' => "Kutsumanimesi", 'en' => "Your given name"],
     "type" => "text",
     "required" => true,
     "class" => "half-width",
   ],
   [
-    "id" => "surname",
+    "id" => "last_name",
     "name" => ['fi' => "Sukunimesi", 'en' => "Your surname"],
     "type" => "text",
     "required" => true,
@@ -62,7 +62,7 @@ $fields = [
     "required" => false,
   ],
   [
-    "id" => "phone",
+    "id" => "phone_number",
     "name" => ['fi' => "Puhelinnumero", 'en' => "Phone number"],
     "info" => [
       'fi' => "Otamme sinuun yhteyttä puhelimitse tai tekstiviestitse vain kiireellisissä asioissa, kuuten tarjotaksemme peruutuspaikkaa.",
@@ -73,7 +73,7 @@ $fields = [
     "class" => "half-width",
   ],
   [
-    "id" => "birthyear",
+    "id" => "birth_year",
     "name" => ['fi' => "Syntymävuotesi", 'en' => "Year of your birth"],
     "info" => ['
       fi' => "Käytämme tätä tietoa osallistujien ikäjakauman selvittämiseen. Tiedotamme ikäjakauman kaikille osallistujille.",
@@ -84,7 +84,7 @@ $fields = [
     "class" => "half-width",
   ],
   [
-    "id" => "languagepreference",
+    "id" => "language_preference",
     "name" => ['fi' => "Mitä kieltä suosit?", 'en' => "Which language do you prefer?"],
     "type" => "radio",
     "choices" => [
@@ -95,7 +95,7 @@ $fields = [
     "required" => true,
   ],
   [
-    "id" => "allegies",
+    "id" => "allergies",
     "name" => [
       'fi' => "Allergiat, joista järjestäjien on syytä tietää",
       'en' => "Allergies of which the organizers should be aware"
@@ -104,7 +104,7 @@ $fields = [
     "required" => false,
   ],
   [
-    "id" => "sexorgans",
+    "id" => "genitalia",
     "name" => [
       'fi' => "Mitkä sukuelimet sinulla on?",
       'en' => "What type of genitalia do you have?"
@@ -129,7 +129,7 @@ $fields = [
     ]
   ],
   [
-    "id" => "interest-in-females",
+    "id" => "interest_in_females",
     "name" => [
       'fi' => "Kuinka halukas olet rakastelemaan sellaisten kumppanien kanssa, joilla on naaraan sukuelimet (vulva ja vagina)?",
       'en' => "How eager are you to make love with partners who have female genitalia (vulva and vagina)?"
@@ -139,7 +139,7 @@ $fields = [
     "required" => true,
   ],
   [
-    "id" => "interest-in-males",
+    "id" => "interest_in_males",
     "name" => [
       'fi' => "Kuinka halukas olet rakastelemaan sellaisten kumppanien kanssa, joilla on uroksen sukuelimet (penis)?",
       'en' => "How eager are you to make love with partners who have male genitalia (penis)?"
@@ -155,7 +155,7 @@ $fields = [
     ]
   ],
   [
-    "id" => "min-age",
+    "id" => "age_min",
     "name" => [
       'fi' => "Vähimmäisikä",
       'en' => "Minimum age"
@@ -165,7 +165,7 @@ $fields = [
     "class" => "half-width",
   ],
   [
-    "id" => "max-age",
+    "id" => "age_max",
     "name" => [
       'fi' => "Enimmäisikä",
       'en' => "Maximum age"
@@ -186,7 +186,7 @@ $fields = [
     "required" => false,
   ],
   [
-    "id" => "nongratas",
+    "id" => "non_gratas",
     "name" => [
       'fi' => "Niiden henkilöiden nimet, joiden kanssa et koe voivasi osallistua orgioihin",
       'en' => "The names of those individuals with whom you feel you cannot attend the orgy"
@@ -200,7 +200,7 @@ $fields = [
   ],
   [ "subtitle" => [ "fi" => "Muut tiedot", "en" => "Miscellaneous information" ]],
   [
-    "id" => "staysfornight",
+    "id" => "staying_overnight",
     "name" => [
       'fi' => "Oletko jäämässä yöksi?",
       'en' => "Will you stay overnight?"
@@ -228,7 +228,7 @@ $fields = [
     "required" => false,
   ],
   [
-    "id" => "codeword",
+    "id" => "magic_word",
     "name" => [
       'fi' => "Kirjoita tähän taikasana, jonka löysit kutsusta",
       'en' => "Type here the magic word which you found from the invitation"
@@ -241,7 +241,7 @@ $fields = [
     ],
   ],
   [
-    "id" => "consenttosave",
+    "id" => "consent",
     "name" => [
       'fi' => "Suostumus henkilötietojesi tallentamiseen ja käsittelyyn",
       'en' => "Consent to the storage and processing of your personal data"
