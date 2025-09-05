@@ -28,9 +28,9 @@ END
 
 $interest_choices = [
   ['fi' => "Kyllä kiitos!", 'en' => "Yes please!"],
-  ['fi' => "Melko kiinnostunut", 'en' => "Quite interested"],
-  ['fi' => "Ehkä oikeissa olosuhteissa", 'en' => "Perhaps under the right circumstances"],
-  ['fi' => "Ei kiitos", 'en' => "No thank you"],
+  ['fi' => "Jokseenkin kiinnostunut", 'en' => "Somewhat interested"],
+  ['fi' => "Olen hyvin valikoiva", 'en' => "I'm very selective"],
+  ['fi' => "En lainkaan", 'en' => "Not at all"],
 ];
 
 $fields = [
