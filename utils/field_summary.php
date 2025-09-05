@@ -2,7 +2,7 @@
 require_once('./utils/translate.php');
 
 if (!defined('No')) {
-  const No = ["fi" => "Ei", "en" => "No"];
+  define('No', ["fi" => "Ei", "en" => "No"]);
 }
 
 $value = $_POST[$field['id']];
