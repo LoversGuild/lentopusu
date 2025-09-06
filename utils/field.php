@@ -1,14 +1,17 @@
 <?php
 require_once('./utils/translate.php');
 
+$id = $field['id'];
+$value = isset($_POST[$id]) ? $_POST[$id] : null;
+
 switch($field['type']) {
   case 'riddle':
 ?>
 <input
   type="text"
-  name="<?= $field['id'] ?>"
+  name="<?= $id ?>"
   <?php if ($field['required']): ?>required<?php endif ?>
-  value="<?= htmlspecialchars($_POST[$field['id']] ?? '', ENT_QUOTES, 'UTF-8') ?>" />
+  value="<?= htmlspecialchars($value ?? '', ENT_QUOTES, 'UTF-8') ?>" />
 <?php
   break;
   case 'text':
@@ -17,17 +20,17 @@ switch($field['type']) {
 ?>
 <input
   type="<?= $field['type'] ?>"
-  name="<?= $field['id'] ?>"
+  name="<?= $id ?>"
   <?php if ($field['required']): ?>required<?php endif ?>
-  value="<?= htmlspecialchars($_POST[$field['id']] ?? $field['default'] ?? '', ENT_QUOTES, 'UTF-8') ?>" />
+  value="<?= htmlspecialchars($value ?? $field['default'] ?? '', ENT_QUOTES, 'UTF-8') ?>" />
 <?php
   break;
   case 'textarea':
 ?>
 <textarea
-  name="<?= $field['id'] ?>"
+  name="<?= $id ?>"
   <?php if ($field['required']): ?>required<?php endif ?>
- ><?= htmlspecialchars($_POST[$field['id']] ?? '', ENT_QUOTES, 'UTF-8') ?></textarea>
+ ><?= htmlspecialchars($value ?? '', ENT_QUOTES, 'UTF-8') ?></textarea>
 <?php
   break;
   case 'checkbox':
@@ -35,9 +38,9 @@ switch($field['type']) {
 <label>
   <input
     type="checkbox"
-    name="<?= $field['id'] ?>"
+    name="<?= $id ?>"
     <?php if ($field['required']): ?>required<?php endif ?>
-    <?php if ($_POST[$field['id']] ?? '' == 'true'): ?>checked<?php endif ?>
+    <?php if ($value ?? '' == 'true'): ?>checked<?php endif ?>
     value="true" />
    <?= translate($field['checkboxlabel']) ?>
 </label>
@@ -52,9 +55,9 @@ switch($field['type']) {
   <label>
     <input
       type="radio"
-      name="<?= $field['id'] ?>"
+      name="<?= $id ?>"
       <?php if ($field['required']): ?>required<?php endif ?>
-      <?php if ($_POST[$field['id']] ?? '' == $translatedChoice): ?>checked<?php endif ?>
+      <?php if (($value ?? '') == $translatedChoice): ?>checked<?php endif ?>
       value="<?= $translatedChoice ?>" />
      <?= $translatedChoice ?>
   </label>
