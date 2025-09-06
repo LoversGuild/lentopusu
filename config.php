@@ -2,6 +2,12 @@
 const OutputDir = "data/";
 const SecretPassword = "porkkana";
 
+const GPG_HOME = "~/.gnupg";
+
+const GPG_RECIPIENTS = [
+  '7B1B94F61F748759',
+];
+
 $formTitle = ['fi' => "Ilmoittaudu", 'en' => 'Sign up'];
 $intro = [
 'fi' => <<<END

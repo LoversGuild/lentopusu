@@ -16,7 +16,18 @@ function save($data) {
   $filename = 'form-data-' . $data['timestamp'] . '-' . $email . '.json';
   $file = OutputDir . $filename;
 
-  file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT));
+  putenv("GNUPGHOME=" . GPG_HOME);
+  $gpg = new gnupg();
+  foreach(GPG_RECIPIENTS as $key) {
+    $gpg->addencryptkey($key);
+  }
+
+  if ($encryptedData = $gpg->encrypt(json_encode($data, JSON_PRETTY_PRINT))) {
+    file_put_contents($file, $encryptedData);
+  } else {
+    $data['encryption_error'] = $gpg->geterror();
+    file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT));
+  }
 }
 
 $data = [];
