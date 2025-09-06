@@ -75,8 +75,8 @@ $fields = [
   [
     "id" => "birth_year",
     "name" => ['fi' => "Syntymävuotesi", 'en' => "Year of your birth"],
-    "info" => ['
-      fi' => "Käytämme tätä tietoa osallistujien ikäjakauman selvittämiseen. Tiedotamme ikäjakauman kaikille osallistujille.",
+    "info" => [
+      'fi' => "Käytämme tätä tietoa osallistujien ikäjakauman selvittämiseen. Tiedotamme ikäjakauman kaikille osallistujille.",
       'en' => "We use this information to determine the participants' age range. We publish the age range to all participants."
     ],
     "type" => "number",
