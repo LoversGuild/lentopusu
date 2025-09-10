@@ -57,8 +57,8 @@ switch($field['type']) {
       type="radio"
       name="<?= $id ?>"
       <?php if ($field['required']): ?>required<?php endif ?>
-      <?php if (($value ?? '') == $translatedChoice): ?>checked<?php endif ?>
-      value="<?= $translatedChoice ?>" />
+      <?php if (($value ?? '') == $choice['value']): ?>checked<?php endif ?>
+      value="<?= $choice['value'] ?>" />
      <?= $translatedChoice ?>
   </label>
   <?php endforeach; ?>

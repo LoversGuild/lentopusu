@@ -14,5 +14,16 @@ switch($field['type']) {
   case 'checkbox':
     echo translate($value == "true" ? $field['checkboxlabel'] : No);
     break;
+  case 'radio':
+    $radioFilled = false;
+    foreach($field['choices'] as $choice) {
+      if ($choice['value'] === $value) {
+        echo translate($choice);
+        $radioFilled = true;
+        break;
+      }
+    }
+    if (!$radioFilled) echo '-';
+    break;
 }
 ?>
