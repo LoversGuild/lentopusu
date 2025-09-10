@@ -33,10 +33,10 @@ END
 ];
 
 $interest_choices = [
-  ['fi' => "Kyllä kiitos!", 'en' => "Yes please!"],
-  ['fi' => "Jokseenkin kiinnostunut", 'en' => "Somewhat interested"],
-  ['fi' => "Olen hyvin valikoiva", 'en' => "I'm very selective"],
-  ['fi' => "En lainkaan", 'en' => "Not at all"],
+  ['value' => 'yes', 'fi' => "Kyllä kiitos!", 'en' => "Yes please!"],
+  ['value' => 'is_somewhat_interested', 'fi' => "Jokseenkin kiinnostunut", 'en' => "Somewhat interested"],
+  ['value' => 'is_very_picky', 'fi' => "Olen hyvin valikoiva", 'en' => "I'm very selective"],
+  ['value' => 'no', 'fi' => "En lainkaan", 'en' => "Not at all"],
 ];
 
 $fields = [
@@ -94,9 +94,9 @@ $fields = [
     "name" => ['fi' => "Mitä kieltä suosit?", 'en' => "Which language do you prefer?"],
     "type" => "radio",
     "choices" => [
-      ['fi' => "suomi", 'en' => "Finnish"],
-      ['fi' => "ruotsi", 'en' => "Swedish"],
-      ['fi' => "englanti", 'en' => "English"]
+      ['value' => 'fi', 'fi' => "suomi", 'en' => "Finnish"],
+      ['value' => 'sv', 'fi' => "ruotsi", 'en' => "Swedish"],
+      ['value' => 'en', 'fi' => "englanti", 'en' => "English"]
     ],
     "required" => true,
   ],
@@ -121,9 +121,9 @@ $fields = [
     ],
     "type" => "radio",
     "choices" => [
-      ['fi' => "Vulva ja vagina", 'en' => "Vulva and vagina"],
-      ['fi' => "Penis", 'en' => "Penis"],
-      ['fi' => "Intersukupuoliset/muut sukuelimet", 'en' => "Intersex/Other genitalia"]
+      ['value' => 'vulva', 'fi' => "Vulva ja vagina", 'en' => "Vulva and vagina"],
+      ['value' => 'penis', 'fi' => "Penis", 'en' => "Penis"],
+      ['value' => 'other', 'fi' => "Intersukupuoliset/muut sukuelimet", 'en' => "Intersex/Other genitalia"]
     ],
     "required" => true,
   ],
@@ -213,10 +213,10 @@ $fields = [
     ],
     "type" => "radio",
     "choices" => [
-      [ "fi" => "Jään varmasti!", "en" => "Yes, for sure!" ],
-      [ "fi" => "Jään luultavasti", "en" => "Yes, probably" ],
-      [ "fi" => "Luultavasti en", "en" => "Probably not" ],
-      [ "fi" => "Ei kiitos", "en" => "No thank you" ]
+      ['value' => 'surely', "fi" => "Jään varmasti!", "en" => "Yes, for sure!" ],
+      ['value' => 'probably', "fi" => "Jään luultavasti", "en" => "Yes, probably" ],
+      ['value' => 'probably_not', "fi" => "Luultavasti en", "en" => "Probably not" ],
+      ['value' => 'no', "fi" => "Ei kiitos", "en" => "No thank you" ]
     ],
     "info" => [
       'fi' => "Varaamme nukkumapaikkoja ja aamupalatarpeita sen mukaan, kuinka moni niitä tarvitsee.",
