@@ -54,4 +54,4 @@ const Submit = ['fi' => 'Lähetä', 'en' => 'Submit'];
     <button type="submit"><?= translate(Submit) ?></button>
   </div>
 </form>
-<?php render_template(translate($formTitle));
+<?php render_template(translate($formTitle), true);

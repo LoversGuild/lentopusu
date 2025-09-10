@@ -1,8 +1,26 @@
 <?php
-  ob_start();
+ob_start();
 
-  function render_template($title) {
-    $body = ob_get_clean();
+function languageLink($langValue, $uri_param = null) {
+  // Current path + query
+  $uri = $uri ?? $_SERVER['REQUEST_URI'];
+
+  $parsedUrl = parse_url($uri);
+  // Parse query string into array
+  $query = [];
+  if (isset($parsedUrl['query'])) {
+    parse_str($parsedUrl['query'], $query);
+  }
+  $query['lang'] = $langValue;
+
+  // Build relative URL (path + query)
+  return ($parsedUrl['path'] ?? '/') . '?' . http_build_query($query);
+}
+
+
+function render_template($title, $allow_translating = false) {
+  $lang = lang();
+  $body = ob_get_clean();
 ?><!DOCTYPE html>
 <html>
   <head>
@@ -17,6 +35,16 @@
       <nav class="menu">
         <a id="sitename" href="./">
           <img src="/img/logo_white_small.png" alt="" />Rakastajien kilta</a>
+        <?php if ($allow_translating): ?>
+        <div id="languages">
+          <?php if ($lang !== 'fi'): ?>
+          <a href="<?= languageLink('fi') ?>">Suomeksi</a>
+          <?php endif; ?>
+          <?php if ($lang !== 'en'): ?>
+          <a href="<?= languageLink('en') ?>">In English</a>
+          <?php endif; ?>
+        </div>
+        <?php endif; ?>
       </nav>
       <div class="menu0"></div>
     </header>
