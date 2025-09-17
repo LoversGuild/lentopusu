@@ -16,9 +16,9 @@ switch($field['type']) {
     break;
   case 'radio':
     $radioFilled = false;
-    foreach($field['choices'] as $choice) {
-      if ($choice['value'] === $value) {
-        echo translate($choice);
+    foreach($field['choices'] as $key => $labels) {
+      if ($key === $value) {
+        echo translate($labels);
         $radioFilled = true;
         break;
       }

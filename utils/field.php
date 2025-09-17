@@ -49,16 +49,16 @@ switch($field['type']) {
   case 'radio':
 ?>
 <div class="radio">
-  <?php foreach($field['choices'] as $choice):
-  $translatedChoice = translate($choice);
+  <?php foreach($field['choices'] as $key => $labels):
+  $translatedChoice = translate($labels);
   ?>
   <label>
     <input
       type="radio"
       name="<?= $id ?>"
       <?php if ($field['required']): ?>required<?php endif ?>
-      <?php if (($value ?? '') == $choice['value']): ?>checked<?php endif ?>
-      value="<?= $choice['value'] ?>" />
+      <?php if (($value ?? '') == $key): ?>checked<?php endif ?>
+      value="<?= $key ?>" />
      <?= $translatedChoice ?>
   </label>
   <?php endforeach; ?>
