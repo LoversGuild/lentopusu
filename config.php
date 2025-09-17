@@ -5,6 +5,7 @@ const SecretPassword = "porkkana";
 const GPG_HOME = "~/.gnupg";
 
 const GPG_RECIPIENTS = [
+  'E07F1F8EFF651D5D',
   '7B1B94F61F748759',
 ];
 
