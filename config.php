@@ -70,9 +70,9 @@ $fields = [
   ],
   [
     "id" => "phone_number",
-    "name" => ['fi' => "Puhelinnumero", 'en' => "Phone number"],
+    "name" => ['fi' => "Puhelinnumerosi", 'en' => "Phone number"],
     "info" => [
-      'fi' => "Otamme sinuun yhteyttä puhelimitse tai tekstiviestitse vain kiireellisissä asioissa, kuuten tarjotaksemme peruutuspaikkaa.",
+      'fi' => "Otamme sinuun yhteyttä puhelimitse tai tekstiviestitse vain kiireellisissä asioissa, kuten tarjotaksemme peruutuspaikkaa.",
       'en' => "We will contact you by phone or SMS only for urgent matters—such as to offer a cancellation spot"
     ],
     "type" => "text",
@@ -157,8 +157,8 @@ $fields = [
   ],
   [
     "info" => [
-      'fi' => "Minkä ikäisistä ihmisistä olet kiinnostunut?",
-      'en' => "What age range of people are you interested in?"
+      'fi' => "Minkä ikäisistä ihmisistä olet yleensä kiinnostunut?",
+      'en' => "What age range of people are you generally interested in?"
     ]
   ],
   [
@@ -254,8 +254,8 @@ $fields = [
       'en' => "Consent to the storage and processing of your personal data"
     ],
     "checkboxlabel" => [
-      'fi' => "Olen lukenut ja hyväksyn tietojeni käsittelyn tietosuojaselosteen mukaisesti",
-      'en' => "I have read and I accept processing my personal information according to the Privacy Policy"
+      'fi' => "Olen lukenut ja hyväksyn tietojeni käsittelyn tietosuojaselosteen mukaisesti.",
+      'en' => "I have read and I accept processing my personal information according to the Privacy Policy."
     ],
     "info" => [
       "fi" => <<<END
