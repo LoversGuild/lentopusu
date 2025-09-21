@@ -1,8 +1,7 @@
 <?php
-require_once('./utils/translate.php');
-
 $id = $field['id'];
 $value = isset($_POST[$id]) ? $_POST[$id] : null;
+$field['required'] = false;
 
 switch($field['type']) {
   case 'riddle':

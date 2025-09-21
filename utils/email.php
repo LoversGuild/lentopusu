@@ -1,7 +1,5 @@
 <?php
-require_once('config.php');
-require_once('./utils/translate.php');
-require_once('./utils/data_summary.php');
+require_once('./views/summary/data.php');
 
 $title = translate(['fi' => 'Ilmoittautumisesi', "en" => "Your sign up"]);
 

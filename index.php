@@ -10,48 +10,31 @@ require_once('./utils/template.php');
 require_once('./utils/validate.php');
 require_once('./utils/translate.php');
 
-
+$action = isset($_POST['action']) ? $_POST['action'] : 'form';
 $errors = validate($fields);
-if (count($errors) == 0 && !isset($_GET['edit'])) {
-  require('./utils/summary.php');
-  die();
-}
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-  // Do not show errors when nothing has been submitted
-  $errors = [];
+
+if (count($errors) > 0) {
+  $action = 'form';
 }
 
-const Required = ['fi' => 'pakollinen', 'en' => 'required'];
-const Submit = ['fi' => 'Lähetä', 'en' => 'Submit'];
-
-?>
-<h1><?= translate($formTitle); ?></h1>
-<?= translate($intro); ?>
-<form method="POST" action="index.php?lang=<?= lang() ?>">
-<?php foreach($fields as $field): ?>
-  <?php if (isset($field['subtitle'])): ?>
-  <h2><?= translate($field['subtitle']) ?></h2>
-  <?php endif; ?>
-  <?php if (isset($field['id'])): ?>
-    <div <?php if (isset($field['class'])): ?>class="<?= $field['class'] ?>"<?php endif; ?>>
-    <label labelFor="<?= $field['id']; ?>">
-      <?= translate($field['name']); ?>
-      <?php if ($field['required']): ?> (<?= translate(Required); ?>)<?php endif; ?>
-    </label>
-    <?php require('./utils/field.php'); ?>
-    <?php if (isset($field['info'])): ?>
-    <div class="info"><?= translate($field['info']); ?></div>
-    <?php endif; ?>
-    <?php if (isset($errors[$field['id']])): ?>
-    <div class="error"><?= translate($errors[$field['id']]); ?></div>
-    <?php endif; ?>
-  </div>
-  <?php elseif (isset($field['info'])): ?>
-    <div class="info"><?= translate($field['info']); ?></div>
-  <?php endif; ?>
-<?php endforeach; ?>
-  <div class="buttons">
-    <button type="submit"><?= translate(Submit) ?></button>
-  </div>
-</form>
-<?php render_template(translate($formTitle), true);
+switch ($action) {
+  case 'save':
+    require_once('./utils/save_data.php');
+    saveData($fields);
+    require './views/save.php';
+    break;
+  case 'summary':
+    require('./views/summary.php');
+    break;
+  case 'form':
+    require('./views/form.php');
+    break;
+  case 'email':
+    require_once('./utils/email.php');
+    require('./views/email.php');
+    break;
+  
+  default:
+    echo 'Unknown action ' . $action;
+    break;
+}

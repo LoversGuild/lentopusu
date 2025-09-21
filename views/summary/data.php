@@ -1,7 +1,5 @@
 <?php
-require_once('config.php');
-require_once('./utils/translate.php');
-
+const No =  ["fi" => "Ei", "en" => "No"];
 
 function renderFieldSummary($email) {
   global $fields;
@@ -13,7 +11,7 @@ function renderFieldSummary($email) {
     <div <?php if (isset($field['class'])): ?> class="<?= $field['class'] ?>"<?php endif; ?>>
       <?= translate($field['name']); ?>:
       <div className="summary-value">
-        <?php require('./utils/field_summary.php'); ?>
+        <?php require('./views/summary/field.php'); ?>
       </div>
       <?php if (!$email): ?>
       <input

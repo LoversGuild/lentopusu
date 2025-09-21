@@ -8,6 +8,10 @@ const DefaultRiddleError = [
 ];
 
 function validate($fields) {
+  if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    return [];
+  }
+
   $errors = [];
   foreach ($fields as $field) {
     if (!isset($field['id'])) continue;

@@ -1,10 +1,4 @@
 <?php
-require_once('./utils/translate.php');
-
-if (!defined('No')) {
-  define('No', ["fi" => "Ei", "en" => "No"]);
-}
-
 $value = $_POST[$field['id']];
 switch($field['type']) {
   default:
