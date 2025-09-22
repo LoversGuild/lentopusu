@@ -10,7 +10,7 @@ const ConfigPath = "./config/";
 $config_file = ConfigPath . $event_id . ".php";
 
 // Set constants
-const OutputDir = "/home/rakastajienkilta/.local/state/lentopusu/{$event_id}";
+$output_dir = "/home/rakastajienkilta/.local/state/lentopusu/{$event_id}";
 const GPG_HOME = "~/.gnupg";
 
 // Require files the configuration may need
