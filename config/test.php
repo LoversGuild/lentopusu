@@ -1,33 +1,48 @@
 <?php
-const OutputDir = "data/";
+
 const SecretPassword = "porkkana";
-
-const GPG_HOME = "~/.gnupg";
-
 const GPG_RECIPIENTS = [
   'E07F1F8EFF651D5D',
   '7B1B94F61F748759',
 ];
 
-$formTitle = ['fi' => "Ilmoittaudu", 'en' => 'Sign up'];
+$event_dates = translate([
+  'fi' => '7.4.-8.4.2018',
+  'en' => '7th-8th Apr 2018'
+]);
+
+$invitation_letter_url = translate([
+  'fi' => "https://kutsu.rakastajienkilta.fi/orgiat/{$event_id}/",
+  'en' => "https://invitation.loversguild.org/gentle-orgies/{$event_id}/"
+]);
+
+$formTitle = [
+  'fi' => "Ilmoittaudu Lempeisiin orgioihin {$event_dates}",
+  'en' => 'Sign up for Gentle orgy on {$event_dates}'
+];
+
 $intro = [
 'fi' => <<<END
-<p>Tämä on Lempeiden orgioiden ilmoittautumislomake, tervetuloa!
-Lue ohjeet huolellisesti kenttiä täyttäessäsi.
-Lue myös kutsukirje perusteellisesti ennen ilmoittautumista.
+<p>Tämä on {$event_dates} Lempeiden orgioiden ilmoittautumislomake, tervetuloa!
+Lue
+<a href="{$invitation_letter_url}">kutsukirje</a>
+perusteellisesti ennen ilmoittautumista.
+Lue myös lomakkeen ohjeet huolella kenttiä täyttäessäsi.
 </p>
 <p>Jos suljet lomakkeen keskeneräisenä, syöttämäsi tiedot katoavat.
-Saat lomakkeen lähettämisen jälkeen sähköpostitse vahvistuksen tietojesi tallentumisesta.
+Saat halutessasi sähköpostitse vahvistuksen tietojesi tallentumisesta lomakkeen lähettämisen jälkeen.
 Jos haluat korjata tietojasi lomakkeen lähettämisen jälkeen, voit täyttää lomakkeen uudelleen.
 </p>
 END,
 'en' => <<<END
-<p>This is the registration form for the Gentle Orgies, welcome!
-Please read the instructions carefully as you fill out the fields.
-Also, read the invitation letter thoroughly before signing up.
+<p>This is the registration form for the Gentle Orgy on {$event_dates}, welcome!
+Please read
+<a href="{$invitation_letter_url}">the invitation letter</a>
+thoroughly before signing up.
+Also read the instructions carefully as you fill out the fields.
 </p>
 <p>If you close the form before completing it, your information will be lost.
-After submitting the form, you will receive a confirmation of your information being saved via email.
+Optionally, you can receive a confirmation of your information being saved by email after submitting the form.
 If you wish to correct your information after submitting the form, you can fill out the form again.
 </p>
 END
@@ -67,7 +82,7 @@ $fields = [
     "id" => "email",
     "name" => ['fi' => "Sähköpostiosoitteesi", 'en' => "Your email address"],
     "type" => "email",
-    "required" => false,
+    "required" => true,
   ],
   [
     "id" => "phone_number",
@@ -94,7 +109,7 @@ END,
 END
     ],
     "type" => "number",
-    "required" => false,
+    "required" => true,
     "class" => "half-width",
   ],
   [
@@ -183,7 +198,7 @@ END
       'en' => "Minimum age"
     ],
     "type" => "number",
-    "required" => false,
+    "required" => true,
     "class" => "half-width",
   ],
   [
@@ -193,7 +208,7 @@ END
       'en' => "Maximum age"
     ],
     "type" => "number",
-    "required" => false,
+    "required" => true,
     "class" => "half-width",
   ],
   [ "subtitle" => [ 'fi' => "Henkilötoiveet", 'en' => "Preferences regarding individuals"]],
