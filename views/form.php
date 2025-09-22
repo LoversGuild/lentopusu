@@ -5,7 +5,7 @@ const Submit = ['fi' => 'Lähetä', 'en' => 'Submit'];
 ?>
 <h1><?= translate($formTitle); ?></h1>
 <?= translate($intro); ?>
-<form method="POST" action="index.php?lang=<?= lang() ?>">
+<form method="POST" action="?event=<?= $event_id ?>&lang=<?= lang() ?>">
 <?php foreach($fields as $field): ?>
   <?php if (isset($field['subtitle'])): ?>
   <h2><?= translate($field['subtitle']) ?></h2>

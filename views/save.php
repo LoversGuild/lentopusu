@@ -12,8 +12,8 @@ const SendConfirmationEmail = ['fi' => 'Lähetä nämä tiedot minulle sähköpo
 ?>
 <h1><?= translate(Title) ?></h1>
 <p><?= translate(ThankYou) ?></p>
-<p><a href="index.php?lang=<?= lang() ?>"><?= translate(DoAnother) ?></a></p>
-<form method="POST" action="index.php?lang=<?= lang() ?>">
+<p><a href="?event=<?= $event_id ?>&lang=<?= lang() ?>"><?= translate(DoAnother) ?></a></p>
+<form method="POST" action="?event=<?= $event_id ?>&lang=<?= lang() ?>">
   <?php renderFieldSummary(false); ?>
   <div class="buttons">
     <button type="submit" name="action" value="email"><?= translate(SendConfirmationEmail); ?></button>

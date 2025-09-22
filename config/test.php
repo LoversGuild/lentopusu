@@ -34,7 +34,7 @@ END
 ];
 
 $interest_choices = [
-  "<3" => ['fi' => "Kyllä kiitos!", 'en' => "Yes please!"],
+  "<3" => ['fi' => "Erittäin halukas!", 'en' => "Very eager!"],
   ":*" => ['fi' => "Jokseenkin kiinnostunut", 'en' => "Somewhat interested"],
   ":)" => ['fi' => "Olen kokematon, mutta utelias", 'en' => "I'm inexperienced, yet curious"],
   ":/" => ['fi' => "Olen hyvin valikoiva", 'en' => "I'm very selective"],
@@ -71,7 +71,7 @@ $fields = [
   ],
   [
     "id" => "phone_number",
-    "name" => ['fi' => "Puhelinnumerosi", 'en' => "Phone number"],
+    "name" => ['fi' => "Puhelinnumerosi", 'en' => "Your phone number"],
     "info" => [
       'fi' => "Otamme sinuun yhteyttä puhelimitse tai tekstiviestitse vain kiireellisissä asioissa, kuten tarjotaksemme peruutuspaikkaa.",
       'en' => "We will contact you by phone or SMS only for urgent matters—such as to offer a cancellation spot"
@@ -84,8 +84,14 @@ $fields = [
     "id" => "birth_year",
     "name" => ['fi' => "Syntymävuotesi", 'en' => "Year of your birth"],
     "info" => [
-      'fi' => "Käytämme tätä tietoa osallistujien ikäjakauman selvittämiseen. Tiedotamme ikäjakauman kaikille osallistujille.",
-      'en' => "We use this information to determine the participants' age range. We publish the age range to all participants."
+      'fi' => <<<END
+        Käytämme tätä tietoa osallistujia valitessamme lisätäksemme sopivien leikkitovereiden löytymisen todennäköisyyttä.
+        Lisäksi kerromme ryhmän ikäjakauman kaikille osallistujille ennen orgioita.
+END,
+      'en' => <<<END
+        We use this information in choosing participants to further increase the chances of finding suitable playmates.
+        In addition, we tell the group’s age range too all participants before the orgy.
+END
     ],
     "type" => "number",
     "required" => false,
@@ -105,8 +111,8 @@ $fields = [
   [
     "id" => "allergies",
     "name" => [
-      'fi' => "Allergiat, joista järjestäjien on syytä tietää",
-      'en' => "Allergies of which the organizers should be aware"
+      'fi' => "Allergiasi, joista järjestäjien on syytä tietää",
+      'en' => "Your allergies of which the organizers should be aware"
     ],
     "type" => "textarea",
     "required" => false,
@@ -132,8 +138,16 @@ $fields = [
   [ "subtitle" => ['fi' => "Seksuaaliset mieltymyksesi", 'en' => "Your sexual preferences"] ],
   [
     "info" => [
-      'fi' => "Haluaisimme tietää onko rakastelukumppanien sukuelinten tyypillä sinulle merkitystä. Käytämme tätä tietoa osallistujia valitessamme lisätäksemme sopivien leikkitovereiden löytymisen todennäköisyyttä.",
-      'en' => "We would like to know if the type of your love-making partners' genitalia matters to you. We use this information in choosing participants to further increase the chances of finding suitable playmates."
+      'fi' => <<<END
+        Haluaisimme tietää onko rakastelukumppanien sukuelinten tyypillä sinulle merkitystä.
+        Tarkoitamme tässä yhteydessä rakastelulla leikkejä, joissa molemmin puolin kosketetaan hyvin intiimisti toisen sukuelimiä, kuten yhdyntää ja suuseksiä.
+        Käytämme tätä tietoa osallistujia valitessamme lisätäksemme sopivien leikkitovereiden löytymisen todennäköisyyttä.
+END,
+      'en' => <<<END
+        We would like to know if the type of your lovemaking partners’ genitalia matters to you.
+        In this context lovemaking refers to a play where all parties touch each other’s genitals very intimately, such as intercourse and oral sex.
+        We use this information in choosing participants to further increase the chances of finding suitable playmates.
+END
     ]
   ],
   [
@@ -267,7 +281,7 @@ $fields = [
           Sinun tulee antaa suostumus sinua koskevan arkaluontoisen tiedon käsittelyyn ja tallentamiseen.</p>
 END,
       "en" => <<<END
-        <p>Your personal data will be stored in the Lovers' Guild's participant registry and processed in accordance with our
+        <p>Your personal data will be stored in the Lovers’ Guild’s participant registry and processed in accordance with our
           <a href='https://rakastajienkilta.fi/vastuullisuus/tietosuoja/osallistujarekisteri/'>Privacy Policy</a>
           (unfortunately available in Finnish only, use translator).</p>
         <p>Some of the information we request is classified as sensitive under the Finnish law.

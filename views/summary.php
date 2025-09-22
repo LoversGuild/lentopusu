@@ -7,7 +7,7 @@ const SummaryTitle= ['fi' => 'Olet lähettämässä seuraavat tiedot', 'en' => '
 
 ?>
 <h1><?= translate(SummaryTitle) ?></h1>
-<form method="POST" action="index.php?lang=<?= lang() ?>">
+<form method="POST" action="?event=<?= $event_id ?>&lang=<?= lang() ?>">
   <?php renderFieldSummary(false); ?>
   <div class="buttons">
     <button type="submit" name="action" value="form"><?= translate(EditAnswers); ?></button>
