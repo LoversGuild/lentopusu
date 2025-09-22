@@ -13,7 +13,7 @@ function saveData($fields) {
   global $output_dir;
   $email = preg_replace( '/[^a-z0-9@.\-]+/', '-', strtolower($data['email']));
   $filename = 'form-data-' . $data['timestamp'] . '-' . $email . '.json';
-  $file = $output_dir . $filename;
+  $file = $output_dir . '/' . $filename;
 
   putenv("GNUPGHOME=" . GPG_HOME);
   $gpg = new gnupg();
