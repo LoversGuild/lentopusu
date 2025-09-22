@@ -19,4 +19,4 @@ const SendConfirmationEmail = ['fi' => 'Lähetä nämä tiedot minulle sähköpo
     <button type="submit" name="action" value="email"><?= translate(SendConfirmationEmail); ?></button>
   </div>
 </form>
-<?php render_template(translate($formTitle));
+<?php render_template(translate($form_title));

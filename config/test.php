@@ -16,7 +16,7 @@ $invitation_letter_url = translate([
   'en' => "https://invitation.loversguild.org/gentle-orgies/{$event_id}/"
 ]);
 
-$formTitle = [
+$form_title = [
   'fi' => "Ilmoittaudu Lempeisiin orgioihin {$event_dates}",
   'en' => 'Sign up for Gentle orgy on {$event_dates}'
 ];

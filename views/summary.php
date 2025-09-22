@@ -14,4 +14,4 @@ const SummaryTitle= ['fi' => 'Olet lähettämässä seuraavat tiedot', 'en' => '
     <button type="submit" name="action" value="save"><?= translate(Submit); ?></button>
   </div>
 </form>
-<?php render_template(translate($formTitle));
+<?php render_template(translate($form_title));

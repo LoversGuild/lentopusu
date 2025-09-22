@@ -3,7 +3,7 @@ const Required = ['fi' => 'pakollinen', 'en' => 'required'];
 const Submit = ['fi' => 'Lähetä', 'en' => 'Submit'];
 
 ?>
-<h1><?= translate($formTitle); ?></h1>
+<h1><?= translate($form_title); ?></h1>
 <?= translate($intro); ?>
 <form method="POST" action="?event=<?= $event_id ?>&lang=<?= lang() ?>">
 <?php foreach($fields as $field): ?>
@@ -32,4 +32,4 @@ const Submit = ['fi' => 'Lähetä', 'en' => 'Submit'];
     <button type="submit" name="action" value="summary"><?= translate(Submit) ?></button>
   </div>
 </form>
-<?php render_template(translate($formTitle), true);
+<?php render_template(translate($form_title), true);
