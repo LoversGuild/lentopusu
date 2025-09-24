@@ -61,7 +61,6 @@ function saveData($fields) {
   if ($encryptedData = $gpg->encrypt(json_encode($data, JSON_PRETTY_PRINT))) {
     file_put_contents($file, $encryptedData);
   } else {
-    $data['encryption_error'] = $gpg->geterror();
-    file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT));
+    throw new RuntimeException("Data encryption error: " . $gpg->geterror());
   }
 }
