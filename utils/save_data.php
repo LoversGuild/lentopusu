@@ -3,8 +3,10 @@
 require_once('./config.php');
 
 function saveData($fields) {
+  global $event;             
   $data = [];
   $data['timestamp'] = gmdate("Y-m-d\TH:i:s\Z");
+  $data['event_id'] = $event;
   foreach ($fields as $field) {
     if (!isset($field['id'])) continue;
     $data[$field['id']] = $_POST[$field['id']];
