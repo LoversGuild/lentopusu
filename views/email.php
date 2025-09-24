@@ -2,10 +2,10 @@
 
 const Title = ['fi' => 'Sähköposti lähetetty!', 'en' => 'Email sent!'];
 const ThankYou = [
-  'fi' => 'Antamistasi tiedoista on lähetetty sinulle sähköposti antaamasi osoitteeseen.',
-  'en' => 'A summary of your answers has been sent to the email you have given.'
+  'fi' => 'Antamistasi tiedot on lähetetty sinulle sähköpostitse antaamasi osoitteeseen.',
+  'en' => 'Your information has been sent via email to the address you provided.'
 ];
-const DoAnother = ['fi' => 'Lähetä toinen ilmoittautuminen.', 'en' => 'Fill out another sign up.'];
+const DoAnother = ['fi' => 'Lähetä uusi ilmoittautuminen.', 'en' => 'Fill out another signup.'];
 
 ?>
 <h1><?= translate(Title) ?></h1>

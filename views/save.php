@@ -1,12 +1,22 @@
 <?php
 require_once('./views/summary/data.php');
 
-const Title = ['fi' => 'Tiedot tallennettu!', 'en' => 'Your data has been stored!'];
+const Title = ['fi' => 'Ilmoittautumisesi on vastaanotettu!', 'en' => 'Your signup has been received!'];
 const ThankYou = [
-  'fi' => 'Kiitos ilmoittautumisesta! Ohessa vielä lähettämäsi tiedot. Huomioithan että tietosuojasyistä emme lähetä sinulle automaattista vahvistussähköpostia. Jos haluat tallettaa lähettämäsi tiedot, voit laittaa tämän kiitossivun talteen tai painaa sivun alareunassa olevaa sähköpostinlähetysnappia.',
-  'en' => 'Thank you for signing up! Here\'s the answers you sent. Note that for privacy reasons we do not automatically send a confirmation email. If you want to save your answers, you can save this thank you page, or press the send email button at the bottom of the page.'
+  'fi' => <<<END
+    Kiitos ilmoittautumisestasi!
+    Alla vielä lähettämäsi tiedot.
+    Tietosuojasyistä emme lähetä tietojasi sinulle sähköpostitse automaattisesti.
+    Jos haluat tallettaa lähettämäsi tiedot itsellesi, voit tallentaa tämän sivun sisällön tai lähetyttää tiedot antamaasi sähköpostiosoitteeseen sivun lopussa olevalla painikkeella.
+END,
+  'en' => <<<END
+    Thank you for your registration!
+    Below are the details you submitted.
+    For privacy reasons, we do not automatically send your information to you via email.
+    If you want to save the information you provided, you can either save the content of this page or send the details to the email address you provided using the button at the bottom of the page.
+END
 ];
-const DoAnother = ['fi' => 'Lähetä toinen ilmoittautuminen.', 'en' => 'Fill out another sign up.'];
+const DoAnother = ['fi' => 'Lähetä uusi ilmoittautuminen.', 'en' => 'Fill out another signup.'];
 const SendConfirmationEmail = ['fi' => 'Lähetä nämä tiedot minulle sähköpostitse', 'en' => 'Send me this summary via email'];
 
 ?>

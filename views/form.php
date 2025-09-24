@@ -1,6 +1,6 @@
 <?php
-const Required = ['fi' => 'pakollinen', 'en' => 'required'];
-const Submit = ['fi' => 'Lähetä', 'en' => 'Submit'];
+const Required = ['fi' => '*', 'en' => '*'];
+const Submit = ['fi' => 'Jatka vahvistukseen', 'en' => 'Proceed to confirmation'];
 
 ?>
 <h1><?= translate($form_title); ?></h1>

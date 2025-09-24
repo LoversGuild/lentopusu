@@ -28,6 +28,7 @@ Lue
 <a href="{$invitation_letter_url}">kutsukirje</a>
 perusteellisesti ennen ilmoittautumista.
 Lue myös lomakkeen ohjeet huolella kenttiä täyttäessäsi.
+Asteriskilla (*) merkityt kentät ovat pakollisia.
 </p>
 <p>Jos suljet lomakkeen keskeneräisenä, syöttämäsi tiedot katoavat.
 Saat halutessasi sähköpostitse vahvistuksen tietojesi tallentumisesta lomakkeen lähettämisen jälkeen.
@@ -40,6 +41,7 @@ Please read
 <a href="{$invitation_letter_url}">the invitation letter</a>
 thoroughly before signing up.
 Also read the instructions carefully as you fill out the fields.
+Fields marked with an asterisk (*) are mandatory.
 </p>
 <p>If you close the form before completing it, your information will be lost.
 Optionally, you can receive a confirmation of your information being saved by email after submitting the form.
