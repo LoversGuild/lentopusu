@@ -10,5 +10,5 @@ const DoAnother = ['fi' => 'Lähetä uusi ilmoittautuminen.', 'en' => 'Fill out 
 ?>
 <h1><?= translate(Title) ?></h1>
 <p><?= translate(ThankYou) ?></p>
-<p><a href="index.php?lang=<?= lang() ?>"><?= translate(DoAnother) ?></a></p>
+<p><a href="index.php?event=<?= $event ?>&lang=<?= lang() ?>"><?= translate(DoAnother) ?></a></p>
 <?php render_template(translate($form_title));
