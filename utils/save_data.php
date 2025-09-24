@@ -49,7 +49,7 @@ function saveData($fields) {
 
   global $output_dir;
   $email = preg_replace( '/[^a-z0-9@.\-]+/', '-', strtolower($data['email']));
-  $filename = 'form-data-' . $data['timestamp'] . '-' . $email . '.json';
+  $filename = 'form-data-' . $data['timestamp'] . '-' . $email . '.json.gpg';
   $file = $output_dir . '/' . $filename;
 
   putenv("GNUPGHOME=" . GPG_HOME);
