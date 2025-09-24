@@ -17,6 +17,14 @@ function languageLink($langValue, $uri_param = null) {
   return ($parsedUrl['path'] ?? '/') . '?' . http_build_query($query);
 }
 
+const GUILD_NAME = [
+  'fi' => 'Rakastajien kilta',
+  'en' => 'Lovers\' guild',
+];
+const MAIN_SITE_URL = [
+  'fi' => 'https://rakastajienkilta.fi',
+  'en' => 'https://loversguild.org',
+];
 
 function render_template($title, $allow_translating = false) {
   $lang = lang();
@@ -27,14 +35,14 @@ function render_template($title, $allow_translating = false) {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <title><?= $title ?></title>
-    <link rel="stylesheet" href="/main.css" type="text/css" />
+    <link rel="stylesheet" href="<?= translate(MAIN_SITE_URL) ?>/main.css" type="text/css" />
     <link rel="stylesheet" href="./form.css" type="text/css" />
   </head>
   <body>
     <header id="mainheader" data-nosnippet>
       <nav class="menu">
-        <a id="sitename" href="./">
-          <img src="/img/logo_white_small.png" alt="" />Rakastajien kilta</a>
+        <a id="sitename" href="<?= translate(MAIN_SITE_URL) ?>">
+          <img src="<?= translate(MAIN_SITE_URL) ?>/img/logo_white_small.png" alt="" /><?= translate(GUILD_NAME) ?></a>
         <?php if ($allow_translating): ?>
         <div id="languages">
           <?php if ($lang !== 'fi'): ?>
@@ -55,7 +63,7 @@ function render_template($title, $allow_translating = false) {
       <p>
         <span>
           © 2018–<?= date("Y") ?>
-          <a href="/">Rakastajien kilta</a>
+          <a href="<?= translate(MAIN_SITE_URL) ?>"><?= translate(GUILD_NAME) ?></a>
         </span>
       </p>
       <p class="cc-licence">
