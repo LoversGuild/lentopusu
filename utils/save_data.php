@@ -2,6 +2,39 @@
 
 require_once('./config.php');
 
+function field_to_json(string $type, string $value, bool $optional) {
+    switch ($type) {
+        case 'number':
+            if ($optional && $value === '') {
+                return null;
+            }
+            if (!is_numeric($value)) {
+                throw new InvalidArgumentException("Conversion to number failed for value: $value");
+            }
+            return (int)$value;
+
+        case 'checkbox':
+            if ($value === '') {
+                return false;
+            }
+            $result = filter_var($value, FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE);
+            if ($result === null) {
+                throw new InvalidArgumentException("Conversion to boolean failed for value: $value");
+            }
+            return $result;
+
+        case 'radio':
+        case 'text':
+        case 'textarea':
+        case 'email':
+        case 'riddle':
+            return $value;
+
+        default:
+            throw new InvalidArgumentException("Invalid type: $type");
+    }
+}
+
 function saveData($fields) {
   global $event_id;             
   $data = [];
@@ -9,7 +42,9 @@ function saveData($fields) {
   $data['event_id'] = $event_id;
   foreach ($fields as $field) {
     if (!isset($field['id'])) continue;
-    $data[$field['id']] = $_POST[$field['id']];
+    $id = $field['id'];
+    $value = trim($_POST[$id]);
+    $data[$id] = field_to_json($field["type"], $value, !$field["required"]);
   }
 
   global $output_dir;
