@@ -58,6 +58,9 @@ function saveData($fields) {
     $gpg->addencryptkey($key);
   }
 
+  if (!file_exists($output_dir)) {
+    mkdir($output_dir, 0777, true);
+  }
   if ($encryptedData = $gpg->encrypt(json_encode($data, JSON_PRETTY_PRINT))) {
     file_put_contents($file, $encryptedData);
   } else {
