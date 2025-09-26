@@ -47,24 +47,35 @@ function saveData($fields) {
     $data[$id] = field_to_json($field["type"], $value, !$field["required"]);
   }
 
-  global $output_dir;
 
-  $email = preg_replace( '/[^a-z0-9@.\-]+/', '-', strtolower($data['email']));
-  $filename = 'form-data-' . $data['timestamp'] . '-' . $email . '.json.gpg';
-  $file = OutputPathBase . "/{$event_id}/" . $filename;
+  $email = preg_replace( '/[^a-z0-9@.\-]+/', '-', strtolower($data['email'] ?? ''));
+  $extension = encryptionDisabled() ? '.json' : '.json.gpg';
+  $filename = 'form-data-' . $data['timestamp'] . '-' . sha1($email) . $extension;
+  $output_dir = OutputPathBase . "/{$event_id}/";
+  $file = $output_dir . $filename;
+
+  if (!file_exists($output_dir)) {
+    mkdir($output_dir, 0777, true);
+  }
+  $encryptedData = encryptData(json_encode($data, JSON_PRETTY_PRINT));
+  file_put_contents($file, $encryptedData);
+}
+
+function encryptData($data) {
+  if (encryptionDisabled()) return $data;
 
   putenv("GNUPGHOME=" . GPG_HOME);
   $gpg = new gnupg();
   foreach(GPG_RECIPIENTS as $key) {
     $gpg->addencryptkey($key);
   }
-
-  if (!file_exists($output_dir)) {
-    mkdir($output_dir, 0777, true);
-  }
   if ($encryptedData = $gpg->encrypt(json_encode($data, JSON_PRETTY_PRINT))) {
-    file_put_contents($file, $encryptedData);
+    return $encryptedData;
   } else {
     throw new RuntimeException("Data encryption error: " . $gpg->geterror());
   }
+}
+
+function encryptionDisabled() {
+  return defined('DisableEncryption');
 }
