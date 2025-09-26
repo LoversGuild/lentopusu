@@ -6,10 +6,17 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require_once('./utils/redirect-http.php');
-require_once('config.php');
-require_once('./utils/template.php');
-require_once('./utils/validate.php');
 require_once('./utils/translate.php');
+require_once('./utils/template.php');
+
+try {
+  require_once('config.php');
+} catch (Exception) {
+  require './views/unknownEvent.php';
+  die();
+}
+
+require_once('./utils/validate.php');
 
 $action = isset($_POST['action']) ? $_POST['action'] : 'form';
 $errors = validate($fields);
