@@ -8,6 +8,7 @@ error_reporting(E_ALL);
 require_once('./include/utils/redirect_http.php');
 require_once('./include/utils/translate.php');
 require_once('./include/utils/template.php');
+require_once('./include/utils/error_handler.php');
 
 try {
   require_once('config.php');
