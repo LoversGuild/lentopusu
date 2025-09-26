@@ -1,7 +1,7 @@
 <?php
 const ConfigPath = "./config";
 const GPG_HOME = "~/.gnupg";
-const OutputPathBase = "/home/rakastajienkilta/.local/state/lentopusu";
+const OutputPathBase = "~/.local/state/lentopusu";
 
 require_once('./utils/config.php');
 
