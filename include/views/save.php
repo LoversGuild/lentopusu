@@ -1,5 +1,5 @@
 <?php
-require_once('./views/summary/data.php');
+require_once('./include/views/summary/data.php');
 
 const Title = ['fi' => 'Ilmoittautumisesi on vastaanotettu!', 'en' => 'Your signup has been received!'];
 const ThankYou = [

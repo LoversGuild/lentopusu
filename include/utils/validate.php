@@ -1,6 +1,4 @@
 <?php
-require_once('./utils/translate.php');
-
 const FieldIsRequired = ["fi" => "Kenttä on pakollinen", "en" => "The field is required"];
 const FieldNeedsToBeANumber = ["fi" => "Kentän pitää sisältää numero", "en" => "The field needs to contain a number"];
 const DefaultRiddleError = [

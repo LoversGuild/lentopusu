@@ -16,7 +16,7 @@ const Submit = ['fi' => 'Jatka vahvistukseen', 'en' => 'Proceed to confirmation'
       <?= translate($field['name']); ?>
       <?php if ($field['required']): ?> (<?= translate(Required); ?>)<?php endif; ?>
     </label>
-    <?php require('./views/field.php'); ?>
+    <?php require('./include/views/field.php'); ?>
     <?php if (isset($field['info'])): ?>
     <div class="info"><?= translate($field['info']); ?></div>
     <?php endif; ?>

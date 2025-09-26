@@ -11,7 +11,7 @@ function renderFieldSummary($email) {
     <div <?php if (isset($field['class'])): ?> class="<?= $field['class'] ?>"<?php endif; ?>>
       <?= translate($field['name']); ?>:
       <div className="summary-value">
-        <?php require('./views/summary/field.php'); ?>
+        <?php require('./include/views/summary/field.php'); ?>
       </div>
     </div>
     <?php endif; ?>

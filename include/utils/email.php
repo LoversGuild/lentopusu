@@ -1,5 +1,5 @@
 <?php
-require_once('./views/summary/data.php');
+require_once('./include/views/summary/data.php');
 
 $title = translate(['fi' => 'Ilmoittautumisesi', "en" => "Your signup"]);
 
