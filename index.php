@@ -5,14 +5,14 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once('./include/utils/redirect-http.php');
+require_once('./include/utils/redirect_http.php');
 require_once('./include/utils/translate.php');
 require_once('./include/utils/template.php');
 
 try {
   require_once('config.php');
 } catch (Exception) {
-  require './include/views/unknownEvent.php';
+  require './include/views/unknown_event.php';
   die();
 }
 
