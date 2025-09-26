@@ -1,5 +1,6 @@
 <?php
 const DisableEncryption = true;
+const OutputPathBase = "./data";
 
 $form_title = [
   'fi' => "Testilomake",

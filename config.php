@@ -1,7 +1,6 @@
 <?php
 const ConfigPath = "./config";
 const GPG_HOME = "~/.gnupg";
-const OutputPathBase = "/home/rakastajienkilta/.local/state/lentopusu";
 
 require_once('./include/utils/config.php');
 
@@ -10,3 +9,7 @@ $event_id = $_GET['event'] ?? '';
 validateEventId($event_id);
 
 require_once(getConfigFilePath($event_id));
+
+if (!defined('OutputPathBase')) {
+  define('OutputPathBase', "/home/rakastajienkilta/.local/state/lentopusu");
+}
