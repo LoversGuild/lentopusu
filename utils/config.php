@@ -9,10 +9,11 @@ function validateEventId($event_id) {
     throw new RuntimeException("Event ID '{$event_id}' is not valid.");
   }
 }
-function requireConfig($event_id) {
+
+function getConfigFilePath($event_id) {
   $config_file = ConfigPath . '/' . $event_id . ".php";
   if (!file_exists($config_file)) {
     throw new RuntimeException("No config for this event");
   }
-  require_once($config_file);
+  return $config_file;
 }
