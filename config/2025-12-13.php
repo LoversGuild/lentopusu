@@ -3,7 +3,7 @@
 const SecretPassword = "kynttilä";
 const GPG_RECIPIENTS = [
   'E07F1F8EFF651D5D',
-  '7B1B94F61F748759',
+  '63DE381A12F91959'
 ];
 
 $event_dates = translate([
