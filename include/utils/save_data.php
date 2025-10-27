@@ -69,7 +69,7 @@ function encryptData($data) {
   foreach(GPG_RECIPIENTS as $key) {
     $gpg->addencryptkey($key);
   }
-  if ($encryptedData = $gpg->encrypt(json_encode($data, JSON_PRETTY_PRINT))) {
+  if ($encryptedData = $gpg->encrypt($data)) {
     return $encryptedData;
   } else {
     throw new RuntimeException("Data encryption error: " . $gpg->geterror());
