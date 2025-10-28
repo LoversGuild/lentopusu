@@ -149,32 +149,55 @@ END
   [
     "info" => [
       'fi' => <<<END
-        Haluaisimme tietää onko rakastelukumppanien sukuelinten tyypillä sinulle merkitystä.
-        Tarkoitamme tässä yhteydessä rakastelulla leikkejä, joissa molemmin puolin kosketetaan hyvin intiimisti toisen sukuelimiä, kuten yhdyntää ja suuseksiä.
-        Käytämme tätä tietoa osallistujia valitessamme lisätäksemme sopivien leikkitovereiden löytymisen todennäköisyyttä.
+        <p>Haluaisimme tietää onko rakastelukumppanien sukuelinten tyypillä sinulle merkitystä.</p>
+        Käytämme tätä tietoa muodostaaksemme halukkaista osallistujista ryhmän, jossa kiinnostuksen kohteet sopivat mahdollisimman hyvin yhteen.</p>
+        <p>Seuraavissa kysymyksissä tarkoitamme <em>sensuellilla läheisyydellä</em> esimerkiksi suutelemista, alastoman kehon hyväilyä sekä sukuelinten kevyttä koskettamista.
+        <em>Seksillä</em> tarkoitamme sellaisia leikkejä, kuten yhdyntää ja suuseksiä, joissa kumppanit intohimoisesti ja kokonaisvaltaisesti koskettavat toistensa sukuelimiä.</p>
 END,
       'en' => <<<END
-        We would like to know if the type of your lovemaking partners’ genitalia matters to you.
-        In this context lovemaking refers to a play where all parties touch each other’s genitals very intimately, such as intercourse and oral sex.
-        We use this information in choosing participants to further increase the chances of finding suitable playmates.
+        <p>We’d like to know whether the type of your lovemaking partners’ genitalia matters to you.
+        We use this information to form a group out of willing participants, where people’s interests match as closely as possible.</p>
+
+        <p>In the following questions, by <em>sensual intimacy</em> we mean kissing, caressing a naked body and light touching of the genitalia, for example.
+        By <em>sex</em> we mean play, such as intercourse and oral sex, in which partners passionately and fully touch each other’s genitalia.
 END
     ]
   ],
   [
-    "id" => "interest_in_females",
+    "id" => "interest_in_sensuality_with_vulvae",
     "name" => [
-      'fi' => "Kuinka halukas olet rakastelemaan sellaisten kumppanien kanssa, joilla on vulva ja vagina?",
-      'en' => "How eager are you to make love with partners who have a vulva and a vagina?"
+      'fi' => "Kuinka halukas olet <em>sensuelliin läheisyyteen</em> sellaisten kumppanien kanssa, joilla on vulva ja vagina?",
+      'en' => "How eager are you to share <em>sensual closeness</em> with partners who have a vulva and a vagina?"
     ],
     "type" => "radio",
     "choices" => $interest_choices,
     "required" => true,
   ],
   [
-    "id" => "interest_in_males",
+    "id" => "interest_in_sensuality_with_penes",
     "name" => [
-      'fi' => "Kuinka halukas olet rakastelemaan sellaisten kumppanien kanssa, joilla on penis?",
-      'en' => "How eager are you to make love with partners who have a penis?"
+      'fi' => "Kuinka halukas olet <em>sensuelliin läheisyyteen</em> sellaisten kumppanien kanssa, joilla on penis?",
+      'en' => "How eager are you to share <em>sensual closeness</em> with partners who have a penis?"
+    ],
+    "type" => "radio",
+    "choices" => $interest_choices,
+    "required" => true,
+  ],
+  [
+    "id" => "interest_in_sex_with_vulvae",
+    "name" => [
+      'fi' => "Kuinka halukas olet <em>seksiin</em> sellaisten kumppanien kanssa, joilla on vulva ja vagina?",
+      'en' => "How eager are you to <em>have sex</em> with partners who have a vulva and a vagina?"
+    ],
+    "type" => "radio",
+    "choices" => $interest_choices,
+    "required" => true,
+  ],
+  [
+    "id" => "interest_in_sex_with_penes",
+    "name" => [
+      'fi' => "Kuinka halukas olet <em>seksiin</em> sellaisten kumppanien kanssa, joilla on penis?",
+      'en' => "How eager are you to <em>have sex</em> with partners who have a penis?"
     ],
     "type" => "radio",
     "choices" => $interest_choices,
