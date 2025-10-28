@@ -163,8 +163,8 @@ END
   [
     "id" => "interest_in_females",
     "name" => [
-      'fi' => "Kuinka halukas olet rakastelemaan sellaisten kumppanien kanssa, joilla on naaraan sukuelimet (vulva ja vagina)?",
-      'en' => "How eager are you to make love with partners who have female genitalia (vulva and vagina)?"
+      'fi' => "Kuinka halukas olet rakastelemaan sellaisten kumppanien kanssa, joilla on vulva ja vagina?",
+      'en' => "How eager are you to make love with partners who have a vulva and a vagina?"
     ],
     "type" => "radio",
     "choices" => $interest_choices,
@@ -173,8 +173,8 @@ END
   [
     "id" => "interest_in_males",
     "name" => [
-      'fi' => "Kuinka halukas olet rakastelemaan sellaisten kumppanien kanssa, joilla on uroksen sukuelimet (penis)?",
-      'en' => "How eager are you to make love with partners who have male genitalia (penis)?"
+      'fi' => "Kuinka halukas olet rakastelemaan sellaisten kumppanien kanssa, joilla on penis?",
+      'en' => "How eager are you to make love with partners who have a penis?"
     ],
     "type" => "radio",
     "choices" => $interest_choices,
