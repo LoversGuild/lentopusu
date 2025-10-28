@@ -205,8 +205,8 @@ END
   ],
   [
     "info" => [
-      'fi' => "Minkä ikäisistä ihmisistä olet yleensä kiinnostunut?",
-      'en' => "What age range of people are you generally interested in?"
+      'fi' => "Minkä ikäisistä ihmisistä olet yleensä kiinnostunut rakastelukumppaneina?",
+      'en' => "Which ages of people are you generally interested in as lovemaking partners?"
     ]
   ],
   [
