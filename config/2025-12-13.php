@@ -149,7 +149,7 @@ END
   [
     "info" => [
       'fi' => <<<END
-        <p>Haluaisimme tietää onko rakastelukumppanien sukuelinten tyypillä sinulle merkitystä.</p>
+        <p>Haluaisimme tietää onko rakastelukumppanien sukuelinten tyypillä sinulle merkitystä.
         Käytämme tätä tietoa muodostaaksemme halukkaista osallistujista ryhmän, jossa kiinnostuksen kohteet sopivat mahdollisimman hyvin yhteen.</p>
         <p>Seuraavissa kysymyksissä tarkoitamme <em>sensuellilla läheisyydellä</em> esimerkiksi suutelemista, alastoman kehon hyväilyä sekä sukuelinten kevyttä koskettamista.
         <em>Seksillä</em> tarkoitamme sellaisia leikkejä, kuten yhdyntää ja suuseksiä, joissa kumppanit intohimoisesti ja kokonaisvaltaisesti koskettavat toistensa sukuelimiä.</p>
