@@ -159,7 +159,7 @@ END,
         We use this information to form a group out of willing participants, where people’s interests match as closely as possible.</p>
 
         <p>In the following questions, by <em>sensual intimacy</em> we mean kissing, caressing a naked body and light touching of the genitalia, for example.
-        By <em>sex</em> we mean play, such as intercourse and oral sex, in which partners passionately and fully touch each other’s genitalia.
+        By <em>sex</em> we mean play, such as intercourse and oral sex, in which partners passionately and fully touch each other’s genitalia.</p>
 END
     ]
   ],
