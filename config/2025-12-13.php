@@ -139,8 +139,8 @@ END
     ],
     "type" => "radio",
     "choices" => [
-      "female" => ['fi' => "Vulva ja vagina", 'en' => "Vulva and vagina"],
-      "male" => ['fi' => "Penis", 'en' => "Penis"],
+      "vulva" => ['fi' => "Vulva ja vagina", 'en' => "Vulva and vagina"],
+      "penis" => ['fi' => "Penis", 'en' => "Penis"],
       "other" => ['fi' => "Intersukupuoliset/muut sukuelimet", 'en' => "Intersex/Other genitalia"]
     ],
     "required" => true,
