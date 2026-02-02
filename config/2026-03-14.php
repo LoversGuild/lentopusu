@@ -299,13 +299,13 @@ END
       'en' => "Consent to the storage and processing of your personal data"
     ],
     "checkboxlabel" => [
-      'fi' => "Olen lukenut ja hyväksyn tietojeni käsittelyn tietosuojaselosteen mukaisesti.",
-      'en' => "I have read and I accept processing my personal information according to the Privacy Policy."
+      'fi' => "Olen lukenut tietosuojaselosteen ja hyväksyn tietojeni käsittelyn sen mukaisesti.",
+      'en' => "I have read the Privacy Policy and I accept processing my personal information accordingly."
     ],
     "info" => [
       "fi" => <<<END
         <p>Henkilötietosi tallennetaan Rakastajien killan osallistujarekisteriin ja niitä käsitellään
-          <a href='https://rakastajienkilta.fi/vastuullisuus/tietosuoja/osallistujarekisteri/'>Tietosuojaselosteemme</a>
+          <a href='https://rakastajienkilta.fi/vastuullisuus/tietosuoja/osallistujarekisteri/'>tietosuojaselosteemme</a>
           mukaisesti.</p>
         <p>Osa pyytämistämme tiedoista luokitellaan Suomen lainsäädännössä arkaluontoisiksi.
           Sinun tulee antaa suostumus sinua koskevan arkaluontoisen tiedon käsittelyyn ja tallentamiseen.</p>
