@@ -287,7 +287,7 @@ END
     "id" => "magic_word",
     "name" => [
       'fi' => "Kirjoita tähän taikasana, jonka löysit infokirjeestä (kirjainkoolla on väliä)",
-      'en' => "Type here the magic word you found from the info letter (case sensitive)"
+      'en' => "Type here the magic word you found from the info letter (letter case does matter)"
     ],
     "type" => "riddle",
     "required" => true,
